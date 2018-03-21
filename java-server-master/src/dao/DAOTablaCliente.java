@@ -60,7 +60,7 @@ public class DAOTablaCliente {
 		}
 		
 		String sql = String.format("INSERT INTO %1$s.USUARIO (CONTRASENA,"
-				+ " IDUSUARIO, USARIO, NOMBRE) VALUES (%2$s, '%3$s', '%4$s',%5$s')", 
+				+ " IDUSUARIO, USUARIO, NOMBRE) VALUES ('%2$s', %3$s, '%4$s',%5$s')", 
 				USUARIO, 
 				cliente.getContrasena(),
 				cliente.getIdUsuario(),
@@ -148,9 +148,9 @@ System.out.println(sql);
 //		prepStmt.executeQuery();
 //	}
 
-	public void deleteCliente(Cliente cliente) throws SQLException, Exception {
+	public void deleteCliente(Long id) throws SQLException, Exception {
 
-		String sql = String.format("DELETE FROM %1$s.CLIENTE WHERE IDCLIENTE = %2$d", USUARIO, cliente.getIdUsuario());
+		String sql = String.format("DELETE FROM %1$s.CLIENTE WHERE IDCLIENTE = %2$d", USUARIO,id);
 
 		System.out.println(sql);
 		
