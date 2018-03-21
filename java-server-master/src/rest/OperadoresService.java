@@ -12,6 +12,7 @@ import javax.ws.rs.core.Response;
 
 import tm.AlohaTM;
 import vos.Habitacion;
+import vos.Operador;
 
 
 @Path("operadores")
@@ -39,10 +40,10 @@ public class OperadoresService {
 		try {
 			AlohaTM tm = new AlohaTM(getPath());
 			
-			List<Habitacion> habitaciones;
+			List<Operador> operadores;
 			//Por simplicidad, solamente se obtienen los primeros 50 resultados de la consulta
-			habitaciones = tm.getAllHabitaciones();
-			return Response.status(200).entity(habitaciones).build();
+			operadores = tm.getAllOperadores();
+			return Response.status(200).entity(operadores).build();
 		} 
 		catch (Exception e) {
 			return Response.status(500).entity(doErrorMessage(e)).build();

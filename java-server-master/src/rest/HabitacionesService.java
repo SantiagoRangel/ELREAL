@@ -14,6 +14,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import tm.AlohaTM;
+import tm.VideoAndesTM;
+import vos.Cliente;
 import vos.Habitacion;
 
 
@@ -53,13 +55,17 @@ public class HabitacionesService {
 	}
 	//xascdaca
 	@POST
-	@Path( "habitaciones" )
+
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response addBebedorWithLimitations(Bebedor bebedor) {
-		
-		//TODO Requerimiento 4A: Implemente el metodo a partir de los ejemplos anteriores y utilizando el Transaction Manager de Parranderos 
-		return null;
+	public Response registrarHabitacion(Habitacion habitacion) {
+		AlohaTM tm = new AlohaTM(getPath());
+		try {
+			tm.registrarHabitacion(habitacion);
+		} catch (Exception e) {
+			return Response.status(500).entity(doErrorMessage(e)).build();
+		}
+		return Response.status(200).entity(habitacion).build();
 	}
 	
 //	@GET

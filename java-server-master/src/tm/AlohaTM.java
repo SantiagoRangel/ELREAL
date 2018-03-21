@@ -9,8 +9,11 @@ import java.util.List;
 import java.util.Properties;
 
 import dao.DAOTablaHabitacion;
+import dao.DAOTablaOperador;
+import dao.DAOTablaUsuario;
 import vos.Cliente;
 import vos.Habitacion;
+import vos.Operador;
 
 public class AlohaTM {
 	 
@@ -116,4 +119,76 @@ public class AlohaTM {
 		}
 		return habitaciones;
 	}
+	
+	public List<Operador> getAllOperadores() throws Exception {
+		DAOTablaOperador daoOperador = new DAOTablaOperador();
+		List<Operador> operadores;
+		try 
+		{
+			this.conn = darConexion();
+			daoOperador.setConn(conn);
+			
+			//Por simplicidad, solamente se obtienen los primeros 50 resultados de la consulta
+			operadores = daoOperador.getOperadores();
+		}
+		catch (SQLException sqlException) {
+			System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());
+			sqlException.printStackTrace();
+			throw sqlException;
+		} 
+		catch (Exception exception) {
+			System.err.println("[EXCEPTION] General Exception:" + exception.getMessage());
+			exception.printStackTrace();
+			throw exception;
+		} 
+		finally {
+			try {
+				daoOperador.cerrarRecursos();
+				if(this.conn!=null){
+					this.conn.close();					
+				}
+			}
+			catch (SQLException exception) {
+				System.err.println("[EXCEPTION] SQLException While Closing Resources:" + exception.getMessage());
+				exception.printStackTrace();
+				throw exception;
+			}
+		}
+		return operadores;
+	}
+	public void registrarHabitacion(Habitacion habitacion) throws Exception {
+		DAOTablaHabitacion daoHabitaciones = new DAOTablaHabitacion();
+		try 
+		{
+			//////transaccion
+			
+			this.conn = darConexion();
+			daoHabitaciones.setConn(conn);
+			daoHabitaciones.registrarHabitacion(habitacion);
+			conn.commit();
+
+		} catch (SQLException e) {
+			System.err.println("SQLException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} catch (Exception e) {
+			System.err.println("GeneralException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} finally {
+			try {
+				daoHabitaciones.cerrarRecursos();
+				if(this.conn!=null)
+					this.conn.close();
+			} catch (SQLException exception) {
+				System.err.println("SQLException closing resources:" + exception.getMessage());
+				exception.printStackTrace();
+				throw exception;
+			}
+		}
+	}
+	
+	
+	
+	
 }
