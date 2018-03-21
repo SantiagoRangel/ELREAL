@@ -14,7 +14,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import tm.AlohaTM;
-import vos.Bebedor;
 import vos.Habitacion;
 
 
