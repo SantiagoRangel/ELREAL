@@ -54,7 +54,7 @@ public class HabitacionesService {
 	}
 	
 	@POST
-	@Path( / "habitaciones" )
+	@Path( "habitaciones" )
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response addBebedorWithLimitations(Bebedor bebedor) {
