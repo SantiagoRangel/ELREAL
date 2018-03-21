@@ -65,7 +65,7 @@ public class DAOTablaHostal {
 //		}
 		
 		String sql = String.format("INSERT INTO %1$s.HOSTAL (CONTRASENA,"
-				+ " IDUSUARIO, USUARIO, NOMBRE, UBICACION, DESCRIPCION,HORAATENCION) VALUES ('%2$s', %3$s, '%4$s','%5$s','%6$s','%7$s','%8$s')", 
+				+ " IDHOSTAL, USUARIO, NOMBRE, UBICACION, DESCRIPCION,HORAATENCION) VALUES ('%2$s', %3$s, '%4$s','%5$s','%6$s','%7$s','%8$s')", 
 				USUARIO, 
 				hostal.getContrasena(),
 				hostal.getIdUsuario(),
@@ -181,7 +181,7 @@ System.out.println(sql);
 		
 		
 		String contrasena = resultSet.getString("CONTRASENA");
-		Long idUsuario = resultSet.getLong("IDUSUARIO");
+		Long idUsuario = resultSet.getLong("IDHOSTAL");
 		String usuario = resultSet.getString("USUARIO");
 		String nombre = resultSet.getString("NOMBRE");
 		String ubicacion = resultSet.getString("UBICACION");

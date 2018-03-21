@@ -62,7 +62,7 @@ public class DAOTablaHotel {
 //		}
 		
 		String sql = String.format("INSERT INTO %1$s.HOTEL (CONTRASENA,"
-				+ " IDUSUARIO, USUARIO, NOMBRE, UBICACION, DESCRIPCION) VALUES ('%2$s', %3$s, '%4$s','%5$s','%6$s','%7$s')", 
+				+ " IDHOTEL, USUARIO, NOMBRE, UBICACION, DESCRIPCION) VALUES ('%2$s', %3$s, '%4$s','%5$s','%6$s','%7$s')", 
 				USUARIO, 
 				hotel.getContrasena(),
 				hotel.getIdUsuario(),
@@ -178,7 +178,7 @@ System.out.println(sql);
 		
 		
 		String contrasena = resultSet.getString("CONTRASENA");
-		Long idUsuario = resultSet.getLong("IDUSUARIO");
+		Long idUsuario = resultSet.getLong("IDHOTEL");
 		String usuario = resultSet.getString("USUARIO");
 		String nombre = resultSet.getString("NOMBRE");
 		String ubicacion = resultSet.getString("UBICACION");

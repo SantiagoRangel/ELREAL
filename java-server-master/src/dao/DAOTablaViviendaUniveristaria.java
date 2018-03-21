@@ -62,7 +62,7 @@ public class DAOTablaViviendaUniveristaria {
 //		}
 		
 		String sql = String.format("INSERT INTO %1$s.HOTEL (CONTRASENA,"
-				+ " IDUSUARIO, USUARIO, NOMBRE, HORAATENCION, DESCRIPCION) VALUES ('%2$s', %3$s, '%4$s','%5$s','%6$s','%7$s')", 
+				+ " IDVIVIENDAUNIVERSITARIA, USUARIO, NOMBRE, HORAATENCION, DESCRIPCION) VALUES ('%2$s', %3$s, '%4$s','%5$s','%6$s','%7$s')", 
 				USUARIO, 
 				viviendaUniversitaria.getContrasena(),
 				viviendaUniversitaria.getIdUsuario(),
@@ -178,7 +178,7 @@ System.out.println(sql);
 		
 		
 		String contrasena = resultSet.getString("CONTRASENA");
-		Long idUsuario = resultSet.getLong("IDUSUARIO");
+		Long idUsuario = resultSet.getLong("IDVIVIENDAUNIVERSITARIA");
 		String usuario = resultSet.getString("USUARIO");
 		String nombre = resultSet.getString("NOMBRE");
 		String horaAtencion = resultSet.getString("HORAATENCION");

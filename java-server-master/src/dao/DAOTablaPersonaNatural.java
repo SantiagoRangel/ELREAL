@@ -64,7 +64,7 @@ public class DAOTablaPersonaNatural {
 //		}
 		
 		String sql = String.format("INSERT INTO %1$s.USUARIO (CONTRASENA,"
-				+ " IDUSUARIO, USUARIO, NOMBRE, UNIANDINO) VALUES ('%2$s', %3$s, '%4$s',%5$s', %6$s)", 
+				+ " IDPERSONANATURAL, USUARIO, NOMBRE, UNIANDINO) VALUES ('%2$s', %3$s, '%4$s',%5$s', %6$s)", 
 				USUARIO, 
 				personaNatural.getContrasena(),
 				personaNatural.getIdUsuario(),
@@ -179,7 +179,7 @@ System.out.println(sql);
 		
 		
 		String contrasena = resultSet.getString("CONTRASENA");
-		Long idUsuario = resultSet.getLong("IDUSUARIO");
+		Long idUsuario = resultSet.getLong("IDPERSONANATURAL");
 		String usuario = resultSet.getString("USUARIO");
 		String nombre = resultSet.getString("NOMBRE");
 		Long uniandino = resultSet.getLong("UNIANDINO");

@@ -162,7 +162,7 @@ System.out.println(sql);
 	public Cliente convertResultSetToCliente(ResultSet resultSet) throws SQLException {		
 		
 		String contrasena = resultSet.getString("CONTRASENA");
-		Long idUsuario = resultSet.getLong("IDUSUARIO");
+		Long idUsuario = resultSet.getLong("IDCLIENTE");
 		String usuario = resultSet.getString("USUARIO");
 		String nombre = resultSet.getString("NOMBRE");	
 	

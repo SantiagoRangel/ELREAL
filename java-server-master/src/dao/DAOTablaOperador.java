@@ -167,12 +167,12 @@ System.out.println(sql);
 		
 		
 		String contrasena = resultSet.getString("CONTRASENA");
-		Long idUsuario = resultSet.getLong("IDUSUARIO");
+		Long idOperador = resultSet.getLong("IDOPERADOR");
 		String usuario = resultSet.getString("USUARIO");
 		
 	
 	
-		Operador op = new Operador(usuario, contrasena, idUsuario);
+		Operador op = new Operador(usuario, contrasena, idOperador);
 		return op;
 	}
 	
