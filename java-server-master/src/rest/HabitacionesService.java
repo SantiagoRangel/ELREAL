@@ -51,7 +51,7 @@ public class HabitacionesService {
 			return Response.status(500).entity(doErrorMessage(e)).build();
 		}
 	}
-	
+	//xascdaca
 	@POST
 	@Path( "habitaciones" )
 	@Consumes(MediaType.APPLICATION_JSON)
