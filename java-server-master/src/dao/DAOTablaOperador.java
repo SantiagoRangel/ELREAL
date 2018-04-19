@@ -63,11 +63,12 @@ public class DAOTablaOperador {
 //		}
 		
 		String sql = String.format("INSERT INTO %1$s.OPERADOR (CONTRASENA,"
-				+ " IDOPERADOR, USUARIO) VALUES ('%2$s', %3$s, '%4$s')", 
+				+ " IDOPERADOR, USUARIO, NOMBRE) VALUES ('%2$s', %3$s, '%4$s', '%5$s')", 
 				USUARIO, 
 				operador.getContrasena(),
 				operador.getIdUsuario(),
-				operador.getUsuario());
+				operador.getUsuario(),
+				operador.getNombre());
 	
 		if (findOperadorById(operador.getIdUsuario())!=null && findOperadorByUsuario(operador.getUsuario() )!= null) {
 			throw new Exception("Ya existe el operador");
@@ -169,10 +170,11 @@ System.out.println(sql);
 		String contrasena = resultSet.getString("CONTRASENA");
 		Long idOperador = resultSet.getLong("IDOPERADOR");
 		String usuario = resultSet.getString("USUARIO");
+		String nombre = resultSet.getString("NOMBRE");
 		
 	
 	
-		Operador op = new Operador(usuario, contrasena, idOperador);
+		Operador op = new Operador(usuario, contrasena, idOperador, nombre);
 		return op;
 	}
 	

@@ -66,8 +66,8 @@ public class DAOTablaOferta {
 //			throw new Exception("hay campos en null que no pueden ser null");
 //		}
 //		
-		String sql = String.format("INSERT INTO %1$s.OFERTA (IDVIVIENDA, IDAPARTAMENTO, IDHABITACION, IDOFERTA, FECHAINICIAL, FECHAFINAL, IDOPERADOR) "
-                        + "VALUES (%2$s, %3$s, %4$s, %5$s, '%6$s', '%7$s', %8$s, %9$s)", 
+		String sql = String.format("INSERT INTO %1$s.OFERTA (IDVIVIENDA, IDAPARTAMENTO, IDHABITACION, IDOFERTA, FECHAINICIAL, FECHAFINAL, DISPONIBLE, DESCRIPCION, IDOPERADOR) "
+                        + "VALUES (%2$s, %3$s, %4$s, %5$s, '%6$s', '%7$s', %8$s, %9$s, %10$s)", 
 				USUARIO, 
 				oferta.getIdVivienda(),
 				oferta.getIdApartamento(),
@@ -76,6 +76,7 @@ public class DAOTablaOferta {
 				oferta.getFechaInicial(),
 				oferta.getFechaFinal(),
 				oferta.getDisponible(),
+				oferta.getDescripcion(),
 				oferta.getIdOperador()
 				);
 
@@ -165,10 +166,11 @@ System.out.println(sql);
 		Long idOperador = resultSet.getLong("IDOPERADOR");
 		String fechaInicial  = resultSet.getString("FECHAINICIAL");
 		Long disponible  = resultSet.getLong("DISPONIBLE");
+		String descripcion  = resultSet.getString("DESCRIPCION");
 		String fechaFinal  = resultSet.getString("FECHAFINAL");
 
 
-		Oferta oferta = new Oferta(idVivienda, idApartamento, idHabitacion, idOferta, fechaInicial, fechaFinal, disponible, idOperador);
+		Oferta oferta = new Oferta(idVivienda, idApartamento, idHabitacion, idOferta, fechaInicial, fechaFinal, disponible, descripcion, idOperador);
 		return oferta;
 	}	
 	

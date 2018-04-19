@@ -13,6 +13,9 @@ public class Oferta{
         @JsonProperty(value="disponible")
     private Long disponible;
         
+        @JsonProperty(value="descripcion")
+        private String descripcion;
+        
         @JsonProperty(value="idOferta")
 	private Long idOferta;
         
@@ -35,6 +38,7 @@ public class Oferta{
                         @JsonProperty(value="fechaInicial") String fechaInicial,
                         @JsonProperty(value="fechaFinal") String fechaFinal,
                         @JsonProperty(value="disponible") Long disponible,
+                        @JsonProperty(value="disponible") String descripcion,
                         @JsonProperty(value="idOperador") Long idOperador) 
         {
 		super();
@@ -45,6 +49,7 @@ public class Oferta{
                 this.fechaInicial=fechaInicial;
                 this.fechaFinal=fechaFinal;
                 this.disponible=disponible;
+                this.descripcion=descripcion;
                 this.idOperador= idOperador;
 	}
         
@@ -75,7 +80,21 @@ public class Oferta{
     public void setDisponible(Long disponible) {
         this.disponible = disponible;
     }
+    
+    /**
+     * @return the disponibe
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
 
+    /**
+     * @param fechaFinal the fechaFinal to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+   
     /**
      * @return the fechaInicial
      */

@@ -7,9 +7,6 @@ public class ViviendaUniversitaria extends Operador {
 	@JsonProperty(value="horaAtencion")
 	private String horaAtencion;
 	
-	@JsonProperty(value="nombre")
-	private String nombre;	
-	
 	@JsonProperty(value="descripcion")
 	private String descripcion;
 
@@ -20,10 +17,9 @@ public class ViviendaUniversitaria extends Operador {
                         @JsonProperty(value="nombre") String nombre,
 			 @JsonProperty(value="descripcion")String descripcion)
 	{
-		super(usuario, contrasena, idUsuario);
+		super(usuario, contrasena, idUsuario, nombre);
 		this.descripcion = descripcion;
 		this.horaAtencion = horaAtencion;
-		this.nombre =nombre;
 	}
         
 	public String getDescripcion() {
@@ -40,13 +36,5 @@ public class ViviendaUniversitaria extends Operador {
 
 	public void setHoraAtencion(String horaAtencion) {
 		this.horaAtencion = horaAtencion;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
 	}
 }
