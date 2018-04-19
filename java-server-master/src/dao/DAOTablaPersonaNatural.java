@@ -63,8 +63,8 @@ public class DAOTablaPersonaNatural {
 //			throw new Exception("hay campos nulos");
 //		}
 		
-		String sql = String.format("INSERT INTO %1$s.USUARIO (CONTRASENA,"
-				+ " IDPERSONANATURAL, USUARIO, NOMBRE, UNIANDINO) VALUES ('%2$s', %3$s, '%4$s',%5$s', %6$s)", 
+		String sql = String.format("INSERT INTO %1$s.PERSONANATURAL (CONTRASENA,"
+				+ " IDPERSONANATURAL, USUARIO, NOMBRE, UNIANDINO) VALUES ('%2$s', %3$s, '%4$s','%5$s', %6$s)", 
 				USUARIO, 
 				personaNatural.getContrasena(),
 				personaNatural.getIdUsuario(),

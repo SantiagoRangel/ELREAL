@@ -1,15 +1,17 @@
 package vos;
 
-import java.sql.Date;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 public class Oferta{   
 	
-	@JsonProperty(value="fechaFinal")
-	private java.util.Date fechaFinal;	
+	    @JsonProperty(value="fechaFinal")
+	private String fechaFinal;	
         
         @JsonProperty(value="fechaInicial")
-	private java.util.Date fechaInicial;
+	private String fechaInicial;
+        
+        @JsonProperty(value="disponible")
+    private Long disponible;
         
         @JsonProperty(value="idOferta")
 	private Long idOferta;
@@ -22,13 +24,18 @@ public class Oferta{
 	
         @JsonProperty(value="idVivienda")
 	private Long idVivienda;
+        
+        @JsonProperty(value="idOperador")
+    private Long idOperador;
          
 	public Oferta(@JsonProperty(value="idVivienda") Long idVivienda,
 			@JsonProperty(value="idApartamento")Long idApartamento,
                         @JsonProperty(value="idHabitacion") Long idHabitacion,
                         @JsonProperty(value="idOferta") Long idOferta,
-                        @JsonProperty(value="fechaInicial") java.util.Date fechaInicial,
-                        @JsonProperty(value="fechaFinal") java.util.Date fechaFinal) 
+                        @JsonProperty(value="fechaInicial") String fechaInicial,
+                        @JsonProperty(value="fechaFinal") String fechaFinal,
+                        @JsonProperty(value="disponible") Long disponible,
+                        @JsonProperty(value="idOperador") Long idOperador) 
         {
 		super();
 		this.idVivienda=idVivienda;
@@ -37,33 +44,49 @@ public class Oferta{
                 this.idApartamento=idApartamento;
                 this.fechaInicial=fechaInicial;
                 this.fechaFinal=fechaFinal;
+                this.disponible=disponible;
+                this.idOperador= idOperador;
 	}
         
          /**
      * @return the fechaFinal
      */
-    public java.util.Date getFechaFinal() {
+    public String getFechaFinal() {
         return fechaFinal;
     }
 
     /**
      * @param fechaFinal the fechaFinal to set
      */
-    public void setFechaFinal(java.util.Date fechaFinal) {
+    public void setFechaFinal(String fechaFinal) {
         this.fechaFinal = fechaFinal;
+    }
+    
+    /**
+     * @return the disponibe
+     */
+    public Long getDisponible() {
+        return disponible;
+    }
+
+    /**
+     * @param fechaFinal the fechaFinal to set
+     */
+    public void setDisponible(Long disponible) {
+        this.disponible = disponible;
     }
 
     /**
      * @return the fechaInicial
      */
-    public java.util.Date getFechaInicial() {
+    public String getFechaInicial() {
         return fechaInicial;
     }
 
     /**
      * @param fechaInicial the fechaInicial to set
      */
-    public void setFechaInicial(java.util.Date fechaInicial) {
+    public void setFechaInicial(String fechaInicial) {
         this.fechaInicial = fechaInicial;
     }
 
@@ -122,4 +145,13 @@ public class Oferta{
     public void setIdVivienda(Long idVivienda) {
         this.idVivienda = idVivienda;
     }
+
+	public Long getIdOperador() {
+		return idOperador;
+	}
+
+	public void setIdOperador(Long idOperador) {
+		this.idOperador = idOperador;
+	}
+    
 }

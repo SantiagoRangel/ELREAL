@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import vos.Cliente;
+import vos.Oferta;
 
 public class DAOTablaCliente {
 	
@@ -54,13 +55,13 @@ public class DAOTablaCliente {
 
 	public void registrarCliente(Cliente cliente) throws SQLException, Exception {
 
-		if( cliente.getContrasena()== null || cliente.getIdUsuario() == null || cliente.getUsuario()== null|| cliente.getNombre()== null)
-		{
-			throw new Exception("hay campos nulos");
-		}
-		
-		String sql = String.format("INSERT INTO %1$s.USUARIO (CONTRASENA,"
-				+ " IDUSUARIO, USUARIO, NOMBRE) VALUES ('%2$s', %3$s, '%4$s',%5$s')", 
+//		if( cliente.getContrasena()== null || cliente.getIdUsuario() == null || cliente.getUsuario()== null|| cliente.getNombre()== null)
+//		{
+//			throw new Exception("hay campos nulos");
+//		}
+//		
+		String sql = String.format("INSERT INTO %1$s.CLIENTE (CONTRASENA,"
+				+ " IDCLIENTE, USUARIO, NOMBRE) VALUES ('%2$s', %3$s, '%4$s','%5$s')", 
 				USUARIO, 
 				cliente.getContrasena(),
 				cliente.getIdUsuario(),
@@ -169,4 +170,19 @@ System.out.println(sql);
 		Cliente cliente = new Cliente(usuario, contrasena, idUsuario, nombre);
 		return cliente;
 	}	
+	public ArrayList<Cliente> getReqVIII() throws SQLException, Exception {
+		ArrayList<Cliente> ofertas = new ArrayList<Cliente>();
+		
+		String sql = String.format("SELECT * FROM CLIENTE WHERE IDCLIENTE IN ( SELECT IDENTIFICACIONI FROM (SELECT IDCLIENTE AS IDENTIFICACIONI, COUNT (IDCONTRATO) AS CUENTA FROM CONTRATO WHERE IDHABITACION = 10001 GROUP BY IDCLIENTE) WHERE CUENTA >= 3) OR IDCLIENTE IN (SELECT IDENTIFICACIONII FROM( SELECT IDCLIENTE AS IDENTIFICACIONII, SUM (NOCHES) AS TIEMPO FROM CONTRATO WHERE IDHABITACION = 10001 GROUP BY IDCLIENTE) WHERE TIEMPO >=15)"
+				,USUARIO);
+
+		PreparedStatement prepStmt = conn.prepareStatement(sql);
+		recursos.add(prepStmt);
+		ResultSet rs = prepStmt.executeQuery();
+
+		while (rs.next()) {
+			ofertas.add(convertResultSetToCliente(rs));
+		}
+		return ofertas;
+	}
 }
