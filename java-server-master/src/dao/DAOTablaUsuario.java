@@ -63,11 +63,12 @@ public class DAOTablaUsuario {
 //		}
 //		
 		String sql = String.format("INSERT INTO %1$s.USUARIO (CONTRASENA,"
-				+ " IDUSUARIO, USUARIO) VALUES ('%2$s', %3$s, '%4$s')", 
+				+ " IDUSUARIO, USUARIO, NOMBRE) VALUES ('%2$s', %3$s, '%4$s', '%5$s')", 
 				USUARIO, 
 				usuario.getContrasena(),
 				usuario.getIdUsuario(),
-				usuario.getUsuario());
+				usuario.getUsuario(),
+				usuario.getNombre());
 	
 		if (findUsuarioById(usuario.getIdUsuario())!=null && findUsuarioByUsuario(usuario.getUsuario() )!= null) {
 			throw new Exception("Ya existe el usuario");
@@ -167,10 +168,11 @@ System.out.println(sql);
 		String contrasena = resultSet.getString("CONTRASENA");
 		Long idUsuario = resultSet.getLong("IDUSUARIO");
 		String usuario = resultSet.getString("USUARIO");
+		String nombre = resultSet.getString("NOMBRE");
 		
 	
 	
-		Usuario usu = new Usuario(usuario, contrasena, idUsuario);
+		Usuario usu = new Usuario(usuario, contrasena, nombre, idUsuario);
 		return usu;
 	}
 	

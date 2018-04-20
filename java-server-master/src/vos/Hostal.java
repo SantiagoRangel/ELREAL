@@ -7,9 +7,6 @@ public class Hostal extends Operador {
 	@JsonProperty(value="horaAtencion")
 	private String horaAtencion;
 	
-	@JsonProperty(value="nombre")
-	private String nombre;
-	
 	@JsonProperty(value="ubicacion")
 	private String ubicacion;
 	
@@ -24,10 +21,9 @@ public class Hostal extends Operador {
 			@JsonProperty(value="ubicacion")String ubicacion, 
                         @JsonProperty(value="descripcion")String descripcion)
 	{
-		super(usuario, contrasena, idUsuario);
+		super(usuario, contrasena, idUsuario, nombre);
 		this.descripcion = descripcion;
 		this.horaAtencion = horaAtencion;
-		this.nombre =nombre;
 		this.ubicacion = ubicacion;
 	}
         
@@ -45,14 +41,6 @@ public class Hostal extends Operador {
 
 	public void setHoraAtencion(String horaAtencion) {
 		this.horaAtencion = horaAtencion;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
 	}
 
 	public String getUbicacion() {

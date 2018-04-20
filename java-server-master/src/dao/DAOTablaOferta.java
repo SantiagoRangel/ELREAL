@@ -66,8 +66,13 @@ public class DAOTablaOferta {
 //			throw new Exception("hay campos en null que no pueden ser null");
 //		}
 //		
+<<<<<<< HEAD
 		String sql = String.format("INSERT INTO %1$s.OFERTA (IDVIVIENDA, IDAPARTAMENTO, IDHABITACION, IDOFERTA, FECHAINICIAL, FECHAFINAL, IDOPERADOR) "
                         + "VALUES (%2$s, %3$s, %4$s, %5$s, '%6$s', '%7$s',%8$s)", 
+=======
+		String sql = String.format("INSERT INTO %1$s.OFERTA (IDVIVIENDA, IDAPARTAMENTO, IDHABITACION, IDOFERTA, FECHAINICIAL, FECHAFINAL, DISPONIBLE, DESCRIPCION, IDOPERADOR) "
+                        + "VALUES (%2$s, %3$s, %4$s, %5$s, '%6$s', '%7$s', %8$s, %9$s, %10$s)", 
+>>>>>>> 472bb3c06a9b673ffa2c260c57ee0aa8548619d4
 				USUARIO, 
 				oferta.getIdVivienda(),
 				oferta.getIdApartamento(),
@@ -75,6 +80,11 @@ public class DAOTablaOferta {
 				oferta.getIdOferta(),
 				oferta.getFechaInicial(),
 				oferta.getFechaFinal(),
+<<<<<<< HEAD
+=======
+				oferta.getDisponible(),
+				oferta.getDescripcion(),
+>>>>>>> 472bb3c06a9b673ffa2c260c57ee0aa8548619d4
 				oferta.getIdOperador()
 				);
 
@@ -163,10 +173,19 @@ System.out.println(sql);
 		Long idOferta = resultSet.getLong("IDOFERTA");
 		Long idOperador = resultSet.getLong("IDOPERADOR");
 		String fechaInicial  = resultSet.getString("FECHAINICIAL");
+<<<<<<< HEAD
 		String fechaFinal  = resultSet.getString("FECHAFINAL");
 
 
 		Oferta oferta = new Oferta(idVivienda, idApartamento, idHabitacion, idOferta, fechaInicial, fechaFinal, idOperador);
+=======
+		Long disponible  = resultSet.getLong("DISPONIBLE");
+		String descripcion  = resultSet.getString("DESCRIPCION");
+		String fechaFinal  = resultSet.getString("FECHAFINAL");
+
+
+		Oferta oferta = new Oferta(idVivienda, idApartamento, idHabitacion, idOferta, fechaInicial, fechaFinal, disponible, descripcion, idOperador);
+>>>>>>> 472bb3c06a9b673ffa2c260c57ee0aa8548619d4
 		return oferta;
 	}	
 	
@@ -183,7 +202,11 @@ System.out.println(sql);
 				"FROM OFERTA) ON IDB = OPERADOR.IDOPERADOR AND IDA = IDB " + 
 				"GROUP BY IDA" + 
 				"ORDER BY CUENTA) " + 
+<<<<<<< HEAD
 				"WHERE ROWNUM <= 20;");
+=======
+				"WHERE ROWNUM <= 20");
+>>>>>>> 472bb3c06a9b673ffa2c260c57ee0aa8548619d4
 
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);

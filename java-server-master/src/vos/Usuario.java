@@ -7,6 +7,9 @@ public class Usuario {
 	@JsonProperty(value="usuario")
 	private String usuario;
 	
+	@JsonProperty(value="nombre")
+	private String nombre;
+	
 	@JsonProperty(value="contrasena")	
 	private String contrasena;
 	
@@ -15,10 +18,12 @@ public class Usuario {
 	
 	public Usuario(@JsonProperty(value="usuario") String usuario, 
                 @JsonProperty(value="contrasena")String contrasena,
+                @JsonProperty(value="nombre")String nombre,
                 @JsonProperty(value="idUsuario") Long idUsuario) 
         {
 		super();
 		this.usuario = usuario;
+		this.nombre = nombre;
 		this.contrasena = contrasena;
 		this.idUsuario = idUsuario;
 	}
@@ -45,5 +50,13 @@ public class Usuario {
 
 	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 }
