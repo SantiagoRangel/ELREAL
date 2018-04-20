@@ -4,8 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 
 import vos.Contrato;
 
@@ -65,10 +66,26 @@ public class DAOTablaContrato {
 //		{
 //			throw new Exception("hay campos en null que no pueden ser null");
 //		}
-		
+	
+//		 DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+//	        String dateInString = contrato.getFechaInicial();
+//	        String dateFinString = contrato.getFechaFinal();
+//	            Date dateInicial = formatter.parse(dateInString);
+//	            Date dateFinal = formatter.parse(dateFinString);
+//	            String fechainic = dateInicial.toString();
+		String fechaInic= contrato.getFechaInicial();
+		String fechaFinal= contrato.getFechaFinal();
+
+		String[] arregloInicial = fechaInic.split("-");
+		String[] arregloFinal = fechaFinal.split("-");
+		System.out.println(fechaInic);
+		@SuppressWarnings("deprecation")
+		Date dateFinal = new Date(Integer.parseInt(arregloFinal[0]),Integer.parseInt(arregloFinal[1]), Integer.parseInt(arregloFinal[2]));
+		@SuppressWarnings("deprecation")
+		Date dateInicial = new Date(Integer.parseInt(arregloInicial[0]),Integer.parseInt(arregloInicial[1]), Integer.parseInt(arregloInicial[2]));
 		String sql = String.format("INSERT INTO %1$s.CONTRATO (NOCHES,"
-				+ " COSTOTOTAL, DESCRIPCION, FEHCAINICIAL, FECHAFINAL, IDCONTRATO, "
-				+ "IDCLIENTE ,IDOPERADOR, IDAPARTAMENTO, IDHABITACION, IDVIVIENDA) VALUES (%2$s, %3$s, '%4$s',%5$s', '%6$s', %7$s, %8$s, %9$s, %10$s, %11$s, %12$s)", 
+				+ " COSTO, DESCRIPCION, FECHAINIC, FECHAFINAL, IDCONTRATO, "
+				+ "IDCLIENTE ,IDOPERADOR, IDAPARTAMENTO, IDHABITACION, IDVIVIENDA) VALUES (%2$s, %3$s, '%4$s','%5$s', '%6$s', %7$s, %8$s, %9$s, %10$s, %11$s, %12$s)", 
 				USUARIO, 
 				contrato.getNoches(),
 				contrato.getCostoTotal(),
@@ -121,7 +138,7 @@ System.out.println(sql);
 		Contrato contrato = null;
 
 		String sql = String.format("SELECT * FROM %1$s.CONTRATO WHERE IDCONTRATO = %2$d", USUARIO, id); 
-
+ 
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
 		ResultSet rs = prepStmt.executeQuery();
@@ -152,7 +169,7 @@ System.out.println(sql);
 	public void deleteContrato(Long id) throws SQLException, Exception {
 
 		String sql = String.format("DELETE FROM %1$s.CONTRATO WHERE IDCONTRATO = %2$d", USUARIO, id);
-
+		
 		System.out.println(sql);
 		
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
@@ -165,17 +182,19 @@ System.out.println(sql);
 		
 		Long noches = resultSet.getLong("NOCHES");
 		Long idContrato = resultSet.getLong("IDCONTRATO");
-		Long costoTotal = resultSet.getLong("COSTOTOTAL");
+		Long costo = resultSet.getLong("COSTO");
 		Long idApartamento = resultSet.getLong("IDAPARTAMENTO");
 		String descripcion = resultSet.getString("DESCRIPCION");
-		Date fechaInicial = resultSet.getDate("FECHAINICIAL");
-		Date fechaFinal = resultSet.getDate("FECHAFINAL");
+		Date fechaInicialDate = resultSet.getDate("FECHAINIC");
+		String fechaInicial = fechaInicialDate.toString();
+		Date fechaFinalDate = resultSet.getDate("FECHAFINAL");
+		String fechaFinal = fechaFinalDate.toString();
 		Long idHabitacion = resultSet.getLong("IDHABITACION");
 		Long idCliente = resultSet.getLong("IDCLIENTE");
 		Long idOperador = resultSet.getLong("IDOPERADOR");
 		Long idVivienda = resultSet.getLong("IDVIVIENDA");
 	
-		Contrato contrato = new Contrato(descripcion, fechaInicial, fechaFinal, idContrato, noches, costoTotal, idApartamento, idHabitacion, idCliente, idOperador,idVivienda);
+		Contrato contrato = new Contrato(descripcion, fechaInicial, fechaFinal, idContrato, noches, costo, idApartamento, idHabitacion, idCliente, idOperador,idVivienda);
 		return contrato;
 	}
 	

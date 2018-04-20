@@ -1,0 +1,2011 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ColeccionesPostman",
+		"_postman_id": "ff32ca4a-f574-ed61-2ee4-fab5a9805b52",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/MIO/rest/hostales/10021",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hostales/10021",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n          \"usuario\": \"usuariosda2\",\r\n        \"contrasena\": \"contrasena2\",\r\n        \"idUsuario\": 10006\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10011",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10011",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n          \"usuario\": \"usuariosda2\",\r\n        \"contrasena\": \"contrasena2\",\r\n        \"idUsuario\": 10006\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10011",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10011",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n           \"usuario\": \"mr.master\",\r\n        \"contrasena\": \"asdf\",\r\n        \"idUsuario\": 10011,\r\n        \"horaAtencion\": \"boleo\",\r\n        \"nombre\": \"1 a 2\",\r\n        \"descripcion\": \"descripcion1\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendasUniversitarias",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendasUniversitarias",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n           \"usuario\": \"mr.master\",\r\n        \"contrasena\": \"asdf\",\r\n        \"idUsuario\": 10011,\r\n        \"horaAtencion\": \"boleo\",\r\n        \"nombre\": \"1 a 2\",\r\n        \"descripcion\": \"descripcion1\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n           \"usuario\": \"mr.master\",\r\n        \"contrasena\": \"asdf\",\r\n        \"idUsuario\": 10011,\r\n        \"horaAtencion\": \"boleo\",\r\n        \"nombre\": \"1 a 2\",\r\n        \"descripcion\": \"descripcion1\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles/10006",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles/10006",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n           \"usuario\": \"mr.master\",\r\n        \"contrasena\": \"asdf\",\r\n        \"idUsuario\": 10011,\r\n        \"horaAtencion\": \"boleo\",\r\n        \"nombre\": \"1 a 2\",\r\n        \"descripcion\": \"descripcion1\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n          \"usuario\": \"usuario1\",\r\n    \"contrasena\": \"contrasena1\",\r\n    \"idUsuario\": 10006,\r\n    \"nombre\": \"nombre1\",\r\n    \"ubicacion\": \"calle 100 # 1-2\",\r\n    \"descripcion\": \"descripcion1\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n          \"usuario\": \"usuario1\",\r\n    \"contrasena\": \"contrasena1\",\r\n    \"idUsuario\": 10006,\r\n    \"nombre\": \"nombre1\",\r\n    \"ubicacion\": \"calle 100 # 1-2\",\r\n    \"descripcion\": \"descripcion1\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10012",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10012",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n          \"usuario\": \"usuario1\",\r\n    \"contrasena\": \"contrasena1\",\r\n    \"idUsuario\": 10006,\r\n    \"nombre\": \"nombre1\",\r\n    \"ubicacion\": \"calle 100 # 1-2\",\r\n    \"descripcion\": \"descripcion1\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10012",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10012",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n          \"usuario\": \"usuario1\",\r\n    \"contrasena\": \"contrasena1\",\r\n    \"idUsuario\": 10006,\r\n    \"nombre\": \"nombre1\",\r\n    \"ubicacion\": \"calle 100 # 1-2\",\r\n    \"descripcion\": \"descripcion1\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendasUniversitarias",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendasUniversitarias",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n   \"usuario\": \"mrr.master\",\r\n    \"contrasena\": \"aasdf\",\r\n    \"idUsuario\": 10012,\r\n    \"horaAtencion\": \"bolleo\",\r\n    \"nombre\": \"2 a 3\",\r\n    \"descripcion\": \"descripcion2\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/personasNaturales/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/personasNaturales/10001",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n   \"usuario\": \"mrr.master\",\r\n    \"contrasena\": \"aasdf\",\r\n    \"idUsuario\": 10012,\r\n    \"horaAtencion\": \"bolleo\",\r\n    \"nombre\": \"2 a 3\",\r\n    \"descripcion\": \"descripcion2\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/personasNaturales",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/personasNaturales",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n      \"usuario\": \"mr.master\",\r\n    \"contrasena\": \"asdf\",\r\n    \"idUsuario\": 10001,\r\n    \"nombre\": \"boleo\",\r\n    \"uniandino\": 1\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/habitaciones",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/habitaciones",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n      \"usuario\": \"mr.master\",\r\n    \"contrasena\": \"asdf\",\r\n    \"idUsuario\": 10001,\r\n    \"nombre\": \"boleo\",\r\n    \"uniandino\": 1\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/habitaciones",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/habitaciones",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n      \"usuario\": \"mr.master\",\r\n    \"contrasena\": \"asdf\",\r\n    \"idUsuario\": 10001,\r\n    \"nombre\": \"boleo\",\r\n    \"uniandino\": 1\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10013",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10013",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n      \"usuario\": \"mr.master\",\r\n    \"contrasena\": \"asdf\",\r\n    \"idUsuario\": 10001,\r\n    \"nombre\": \"boleo\",\r\n    \"uniandino\": 1\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendasUniversitarias",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendasUniversitarias",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n        \"usuario\": \"mrrr.master\",\r\n        \"contrasena\": \"aaasdf\",\r\n        \"idUsuario\": 10011,\r\n        \"horaAtencion\": \"bollleo\",\r\n        \"nombre\": \"1 a 2\",\r\n        \"descripcion\": \"descripcion3\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendasUniversitarias",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendasUniversitarias",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n        \"usuario\": \"mrrr.master\",\r\n        \"contrasena\": \"aaasdf\",\r\n        \"idUsuario\": 10011,\r\n        \"horaAtencion\": \"bollleo\",\r\n        \"nombre\": \"1 a 2\",\r\n        \"descripcion\": \"descripcion3\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendasUniversitarias",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendasUniversitarias",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n        \"usuario\": \"mrrr.master\",\r\n        \"contrasena\": \"aaasdf\",\r\n        \"idUsuario\": 10011,\r\n        \"horaAtencion\": \"bollleo\",\r\n        \"nombre\": \"1 a 2\",\r\n        \"descripcion\": \"descripcion3\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10011",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendasUniversitarias/10011",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n        \"usuario\": \"mrrr.master\",\r\n        \"contrasena\": \"aaasdf\",\r\n        \"idUsuario\": 10011,\r\n        \"horaAtencion\": \"bollleo\",\r\n        \"nombre\": \"1 a 2\",\r\n        \"descripcion\": \"descripcion3\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/personasNaturales",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/personasNaturales",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n        \"usuario\": \"mrrr.master\",\r\n        \"contrasena\": \"aaasdf\",\r\n        \"idUsuario\": 10011,\r\n        \"horaAtencion\": \"bollleo\",\r\n        \"nombre\": \"1 a 2\",\r\n        \"descripcion\": \"descripcion3\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/personasNaturales/10002",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/personasNaturales/10002",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n        \"usuario\": \"mrrr.master\",\r\n        \"contrasena\": \"aaasdf\",\r\n        \"idUsuario\": 10011,\r\n        \"horaAtencion\": \"bollleo\",\r\n        \"nombre\": \"1 a 2\",\r\n        \"descripcion\": \"descripcion3\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/personasNaturales/10002",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/personasNaturales/10002",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n        \"usuario\": \"mrrr.master\",\r\n        \"contrasena\": \"aaasdf\",\r\n        \"idUsuario\": 10011,\r\n        \"horaAtencion\": \"bollleo\",\r\n        \"nombre\": \"1 a 2\",\r\n        \"descripcion\": \"descripcion3\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/personasNaturale",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/personasNaturale",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n        \"usuario\": \"mrrrr.master\",\r\n        \"contrasena\": \"aasdf\",\r\n        \"idUsuario\": 10002,\r\n        \"nombre\": \"boleiiiio\",\r\n        \"uniandino\": 0\r\n   \r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/personasNaturales",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/personasNaturales",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n        \"usuario\": \"mrrrr.master\",\r\n        \"contrasena\": \"aasdf\",\r\n        \"idUsuario\": 10002,\r\n        \"nombre\": \"boleiiiio\",\r\n        \"uniandino\": 0\r\n   \r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/personasNaturales",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/personasNaturales",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n        \"usuario\": \"mrrrr.master\",\r\n        \"contrasena\": \"aasdf\",\r\n        \"idUsuario\": 10002,\r\n        \"nombre\": \"boleiiiio\",\r\n        \"uniandino\": 0\r\n   \r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/personasNaturales/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/personasNaturales/10001",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n        \"usuario\": \"mrrrr.master\",\r\n        \"contrasena\": \"aasdf\",\r\n        \"idUsuario\": 10001,\r\n        \"nombre\": \"boleiiiio\",\r\n        \"uniandino\": 0\r\n   \r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/personasNaturales",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/personasNaturales",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n        \"usuario\": \"mrrrr.master\",\r\n        \"contrasena\": \"aasdf\",\r\n        \"idUsuario\": 10001,\r\n        \"nombre\": \"boleiiiio\",\r\n        \"uniandino\": 0\r\n   \r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/personasNaturales/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/personasNaturales/10001",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n        \"usuario\": \"mrrrr.master\",\r\n        \"contrasena\": \"aasdf\",\r\n        \"idUsuario\": 10001,\r\n        \"nombre\": \"boleiiiio\",\r\n        \"uniandino\": 0\r\n   \r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendas",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n        \"usuario\": \"mrrrr.master\",\r\n        \"contrasena\": \"aasdf\",\r\n        \"idUsuario\": 10001,\r\n        \"nombre\": \"boleiiiio\",\r\n        \"uniandino\": 0\r\n   \r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n           \"descripcion\": \"menaje3\",\r\n        \"ubicacion\": \"calle 103 # 1-2\",\r\n        \"menaje\": \"descripciowerwerwrwrn3\",\r\n        \"numeroHabitaciones\": 3,\r\n        \"idPersonaNatural\": 10003,\r\n        \"precio\": 50,\r\n        \"tamano\": 1,\r\n        \"idVivienda\": 10004\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendas/10004",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendas/10004",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n           \"descripcion\": \"menaje3\",\r\n        \"ubicacion\": \"calle 103 # 1-2\",\r\n        \"menaje\": \"descripciowerwerwrwrn3\",\r\n        \"numeroHabitaciones\": 3,\r\n        \"idPersonaNatural\": 10003,\r\n        \"precio\": 50,\r\n        \"tamano\": 1,\r\n        \"idVivienda\": 10004\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/viviendas/10004",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/viviendas/10004",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n           \"descripcion\": \"menaje3\",\r\n        \"ubicacion\": \"calle 103 # 1-2\",\r\n        \"menaje\": \"descripciowerwerwrwrn3\",\r\n        \"numeroHabitaciones\": 3,\r\n        \"idPersonaNatural\": 10003,\r\n        \"precio\": 50,\r\n        \"tamano\": 1,\r\n        \"idVivienda\": 10004\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"usuario\": \"bamboleo\",\r\n        \"contrasena\": \"bamboleo\",\r\n        \"idUsuario\": 10008,\r\n        \"nombre\": \"bamboleoHotel\",\r\n        \"ubicacion\": \"calle 1111100 # 1-2\",\r\n        \"descripcion\": \"el hotel mas aspero\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles/10006",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles/10006",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"usuario\": \"bamboleo\",\r\n        \"contrasena\": \"bamboleo\",\r\n        \"idUsuario\": 10008,\r\n        \"nombre\": \"bamboleoHotel\",\r\n        \"ubicacion\": \"calle 1111100 # 1-2\",\r\n        \"descripcion\": \"el hotel mas aspero\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"usuario\": \"usuario2\",\r\n        \"contrasena\": \"contrasena2\",\r\n        \"idUsuario\": 10006,\r\n        \"nombre\": \"nombre2\",\r\n        \"ubicacion\": \"calle 101 # 1-2\",\r\n        \"descripcion\": \"descripcion2\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles/10006",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles/10006",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"usuario\": \"usuario2\",\r\n        \"contrasena\": \"contrasena2\",\r\n        \"idUsuario\": 10006,\r\n        \"nombre\": \"nombre2\",\r\n        \"ubicacion\": \"calle 101 # 1-2\",\r\n        \"descripcion\": \"descripcion2\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"usuario\": \"bamboleo\",\r\n        \"contrasena\": \"bamboleo\",\r\n        \"idUsuario\": 10009,\r\n        \"nombre\": \"bamboleo\",\r\n        \"ubicacion\": \"calle 101 # 1-2\",\r\n        \"descripcion\": \"bamboleo\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles/10009",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles/10009",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"usuario\": \"bamboleo\",\r\n        \"contrasena\": \"bamboleo\",\r\n        \"idUsuario\": 10009,\r\n        \"nombre\": \"bamboleo\",\r\n        \"ubicacion\": \"calle 101 # 1-2\",\r\n        \"descripcion\": \"bamboleo\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"usuario\": \"bamboleo\",\r\n        \"contrasena\": \"bamboleo\",\r\n        \"idUsuario\": 10009,\r\n        \"nombre\": \"bamboleo\",\r\n        \"ubicacion\": \"calle 101 # 1-2\",\r\n        \"descripcion\": \"bamboleo\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles/10009",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles/10009",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"usuario\": \"bamboleo\",\r\n        \"contrasena\": \"bamboleo\",\r\n        \"idUsuario\": 10009,\r\n        \"nombre\": \"bamboleo\",\r\n        \"ubicacion\": \"calle 101 # 1-2\",\r\n        \"descripcion\": \"bamboleo\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/clientes/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/clientes/10001",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"usuario\": \"bamboleo\",\r\n        \"contrasena\": \"bamboleo\",\r\n        \"idUsuario\": 10009,\r\n        \"nombre\": \"bamboleo\",\r\n        \"ubicacion\": \"calle 101 # 1-2\",\r\n        \"descripcion\": \"bamboleo\"\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/clientes",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/clientes",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n     \"usuario\": \"constrasena1\",\r\n    \"contrasena\": \"constrasena1\",\r\n    \"nombre\": \"nombre1\",\r\n    \"idUsuario\": 10001\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/clientes/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/clientes/10001",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n     \"usuario\": \"constrasena1\",\r\n    \"contrasena\": \"constrasena1\",\r\n    \"nombre\": \"nombre1\",\r\n    \"idUsuario\": 10001\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/clientes",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/clientes",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n     \"usuario\": \"constrasena1\",\r\n    \"contrasena\": \"constrasena1\",\r\n    \"nombre\": \"nombre1\",\r\n    \"idUsuario\": 10001\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/clientes",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/clientes",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n     \"usuario\": \"constrasena1\",\r\n    \"contrasena\": \"constrasena1\",\r\n    \"nombre\": \"nombre1\",\r\n    \"idUsuario\": 10001\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/clientes/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/clientes/10001",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n     \"usuario\": \"constrasena1\",\r\n    \"contrasena\": \"constrasena1\",\r\n    \"nombre\": \"nombre1\",\r\n    \"idUsuario\": 10001\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos/10001",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n     \"usuario\": \"constrasena1\",\r\n    \"contrasena\": \"constrasena1\",\r\n    \"nombre\": \"nombre1\",\r\n    \"idUsuario\": 10001\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/hoteles",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/hoteles",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n     \"usuario\": \"constrasena1\",\r\n    \"contrasena\": \"constrasena1\",\r\n    \"nombre\": \"nombre1\",\r\n    \"idUsuario\": 10001\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos/10001",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n     \"usuario\": \"constrasena1\",\r\n    \"contrasena\": \"constrasena1\",\r\n    \"nombre\": \"nombre1\",\r\n    \"idUsuario\": 10001\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n     \"usuario\": \"constrasena1\",\r\n    \"contrasena\": \"constrasena1\",\r\n    \"nombre\": \"nombre1\",\r\n    \"idUsuario\": 10001\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-04\",\r\n    \"fechaFinal\": \"2000-01-07\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-4\",\r\n    \"fechaFinal\": \"2000-01-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"00-01-4\",\r\n    \"fechaFinal\": \"00-01-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"00-01-4\",\r\n    \"fechaFinal\": \"00-01-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"00-01-4\",\r\n    \"fechaFinal\": \"00-01-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"00-01-4\",\r\n    \"fechaFinal\": \"00-01-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"00-01-4\",\r\n    \"fechaFinal\": \"00-01-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2017-01-4\",\r\n    \"fechaFinal\": \"2017-01-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2017-01-4\",\r\n    \"fechaFinal\": \"2017-01-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2017-2-4\",\r\n    \"fechaFinal\": \"2017-2-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2017-2-4\",\r\n    \"fechaFinal\": \"2017-2-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2017-2-4\",\r\n    \"fechaFinal\": \"2017-2-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos/10001",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2017-2-4\",\r\n    \"fechaFinal\": \"2017-2-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos/10001",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n       \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2017-2-4\",\r\n    \"fechaFinal\": \"2017-2-7\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10001,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n   \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": 0,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10021,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": 0,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n   \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": null,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10021,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": null,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n   \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": null,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10021,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": null,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas/10001",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n   \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": null,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10021,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": null,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas/10001",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas/10001",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n\r\n   \"descripcion\": \"DESCRIPCION1\",\r\n    \"fechaInicial\": \"2000-01-01\",\r\n    \"fechaFinal\": \"2000-01-02\",\r\n    \"idContrato\": 10001,\r\n    \"noches\": 1,\r\n    \"costo\": 10,\r\n    \"idApartamento\": null,\r\n    \"idHabitacion\": 10001,\r\n    \"idCliente\": 10021,\r\n    \"idOperador\": 10001,\r\n    \"idVivienda\": null,\r\n    \"costoTotal\": 10\r\n    \r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n    \"idVivienda\": 0,\r\n    \"idApartamento\": 10001,\r\n    \"idHabitacion\": 0,\r\n    \"idOferta\": 10001,\r\n    \"fechaInicial\": \"2000-1-1\",\r\n    \"fechaFinal\": \"2000-1-5\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n    \"idVivienda\": null,\r\n    \"idApartamento\": 10001,\r\n    \"idHabitacion\": null,\r\n    \"idOferta\": 10001,\r\n    \"fechaInicial\": \"2000-1-1\",\r\n    \"fechaFinal\": \"2000-1-5\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n    \"idVivienda\": null,\r\n    \"idApartamento\": 10001,\r\n    \"idHabitacion\": null,\r\n    \"idOferta\": 10001,\r\n    \"fechaInicial\": \"2000-1-1\",\r\n    \"fechaFinal\": \"2000-1-5\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n    \"idVivienda\": null,\r\n    \"idApartamento\": 10001,\r\n    \"idHabitacion\": null,\r\n    \"idOferta\": 10001,\r\n    \"fechaInicial\": \"2000-1-1\",\r\n    \"fechaFinal\": \"2000-1-5\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n    \"idVivienda\": null,\r\n    \"idApartamento\": 10001,\r\n    \"idHabitacion\": null,\r\n    \"idOferta\": 10001,\r\n    \"fechaInicial\": \"2000-1-1\",\r\n    \"fechaFinal\": \"2000-1-5\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n    \"idVivienda\": null,\r\n    \"idApartamento\": 10001,\r\n    \"idHabitacion\": null,\r\n    \"idOferta\": 10001,\r\n    \"fechaInicial\": \"2000-1-1\",\r\n    \"fechaFinal\": \"2000-1-5\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n    \"idVivienda\": null,\r\n    \"idApartamento\": 10001,\r\n    \"idHabitacion\": null,\r\n    \"idOferta\": 10001,\r\n    \"fechaInicial\": \"2000-1-1\",\r\n    \"fechaFinal\": \"2000-1-5\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n    \"idVivienda\": null,\r\n    \"idApartamento\": 10001,\r\n    \"idHabitacion\": null,\r\n    \"idOferta\": 10001,\r\n    \"fechaInicial\": \"2000-1-1\",\r\n    \"fechaFinal\": \"2000-1-5\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n    \"idVivienda\": null,\r\n    \"idApartamento\": 10001,\r\n    \"idHabitacion\": null,\r\n    \"idOferta\": 10001,\r\n    \"fechaInicial\": \"2000-1-1\",\r\n    \"fechaFinal\": \"2000-1-5\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas/10002",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas/10002",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n    \"idVivienda\": null,\r\n    \"idApartamento\": 10001,\r\n    \"idHabitacion\": null,\r\n    \"idOferta\": 10001,\r\n    \"fechaInicial\": \"2000-1-1\",\r\n    \"fechaFinal\": \"2000-1-5\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n    \"idVivienda\": null,\r\n    \"idApartamento\": 10001,\r\n    \"idHabitacion\": null,\r\n    \"idOferta\": 10001,\r\n    \"fechaInicial\": \"2000-1-1\",\r\n    \"fechaFinal\": \"2000-1-5\"\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n      \"idVivienda\": 10001,\r\n        \"idApartamento\": 0,\r\n        \"idHabitacion\": 0,\r\n        \"idOferta\": 10002,\r\n        \"fechaInicial\": \"2000-1-1\",\r\n        \"fechaFinal\": \"2000-1-3\",\r\n        \"idOperador\": 10002\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n      \"idVivienda\": 10001,\r\n        \"idApartamento\": null,\r\n        \"idHabitacion\": null,\r\n        \"idOferta\": 10002,\r\n        \"fechaInicial\": \"2000-1-1\",\r\n        \"fechaFinal\": \"2000-1-3\",\r\n        \"idOperador\": 10002\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/requerimientoI",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/requerimientoI",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n      \"idVivienda\": 10001,\r\n        \"idApartamento\": null,\r\n        \"idHabitacion\": null,\r\n        \"idOferta\": 10002,\r\n        \"fechaInicial\": \"2000-1-1\",\r\n        \"fechaFinal\": \"2000-1-3\",\r\n        \"idOperador\": 10002\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/clientes",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/clientes",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n      \"idVivienda\": 10001,\r\n        \"idApartamento\": null,\r\n        \"idHabitacion\": null,\r\n        \"idOferta\": 10002,\r\n        \"fechaInicial\": \"2000-1-1\",\r\n        \"fechaFinal\": \"2000-1-3\",\r\n        \"idOperador\": 10002\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/consultas/requerimientoII",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoII",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n      \"idVivienda\": 10001,\r\n        \"idApartamento\": null,\r\n        \"idHabitacion\": null,\r\n        \"idOferta\": 10002,\r\n        \"fechaInicial\": \"2000-1-1\",\r\n        \"fechaFinal\": \"2000-1-3\",\r\n        \"idOperador\": 10002\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/consultas/requerimientoV",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoV",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n      \"idVivienda\": 10001,\r\n        \"idApartamento\": null,\r\n        \"idHabitacion\": null,\r\n        \"idOferta\": 10002,\r\n        \"fechaInicial\": \"2000-1-1\",\r\n        \"fechaFinal\": \"2000-1-3\",\r\n        \"idOperador\": 10002\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/consultas/requerimientoI",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoI",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n\r\n      \"idVivienda\": 10001,\r\n        \"idApartamento\": null,\r\n        \"idHabitacion\": null,\r\n        \"idOferta\": 10002,\r\n        \"fechaInicial\": \"2000-1-1\",\r\n        \"fechaFinal\": \"2000-1-3\",\r\n        \"idOperador\": 10002\r\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

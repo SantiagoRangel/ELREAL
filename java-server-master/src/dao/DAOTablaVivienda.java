@@ -96,7 +96,7 @@ public class DAOTablaVivienda {
 	
 	
 	
-	public ArrayList<Vivienda> getViviendaes() throws SQLException, Exception {
+	public ArrayList<Vivienda> getViviendas() throws SQLException, Exception {
 		ArrayList<Vivienda> viviendaes = new ArrayList<Vivienda>();
 
 		//Aclaracion: Por simplicidad, solamente se obtienen los primeros 50 resultados de la consulta

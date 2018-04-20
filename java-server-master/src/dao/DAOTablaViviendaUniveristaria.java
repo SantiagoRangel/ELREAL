@@ -61,7 +61,7 @@ public class DAOTablaViviendaUniveristaria {
 //			throw new Exception("hay campos nulos");
 //		}
 		
-		String sql = String.format("INSERT INTO %1$s.HOTEL (CONTRASENA,"
+		String sql = String.format("INSERT INTO %1$s.VIVIENDAUNIVERSITARIA (CONTRASENA,"
 				+ " IDVIVIENDAUNIVERSITARIA, USUARIO, NOMBRE, HORAATENCION, DESCRIPCION) VALUES ('%2$s', %3$s, '%4$s','%5$s','%6$s','%7$s')", 
 				USUARIO, 
 				viviendaUniversitaria.getContrasena(),

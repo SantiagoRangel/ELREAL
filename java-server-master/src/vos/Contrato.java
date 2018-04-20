@@ -1,6 +1,5 @@
 package vos;
 
-import java.sql.Date;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
@@ -10,10 +9,10 @@ public class Contrato {
 	private String descripcion;
 	
 	@JsonProperty(value="fechaInicial")
-	private java.util.Date fechaInicial;
+	private String fechaInicial;
 
 	@JsonProperty(value="fechaFinal")
-	private java.util.Date  fechaFinal;
+	private String  fechaFinal;
 	
 	@JsonProperty(value="idContrato")
 	private Long idContrato;
@@ -21,8 +20,8 @@ public class Contrato {
 	@JsonProperty(value="noches")
 	private Long noches;
 	
-	@JsonProperty(value="costoTotal")
-	private Long costoTotal;
+	@JsonProperty(value="costo")
+	private Long costo;
 	
 	@JsonProperty(value="idApartamento")
 	private Long idApartamento;
@@ -40,11 +39,11 @@ public class Contrato {
 	private Long idVivienda;
         
 	public Contrato(@JsonProperty(value="descripcion")String descripcion,
-                @JsonProperty(value="fechaInicial")java.util.Date fechaInicial,
-                @JsonProperty(value="fechaFinal") java.util.Date fechaFinal,
+                @JsonProperty(value="fechaInicial")String fechaInicial,
+                @JsonProperty(value="fechaFinal") String fechaFinal,
                 @JsonProperty(value="idContrato") Long idContrato,
                 @JsonProperty(value="noches") Long noches,
-		@JsonProperty(value="costoTotal")Long costoTotal,
+		@JsonProperty(value="costo")Long costo,
                 @JsonProperty(value="idApartamento") Long idApartamento,
                 @JsonProperty(value="idHabitacion") Long idHabitacion, 
                 @JsonProperty(value="idCliente") Long idCliente,
@@ -57,7 +56,7 @@ public class Contrato {
 		this.fechaFinal = fechaFinal;
 		this.idContrato = idContrato;
 		this.noches = noches;
-		this.costoTotal = costoTotal;
+		this.costo = costo;
 		this.idApartamento = idApartamento;
 		this.idHabitacion = idHabitacion;
 		this.idCliente = idCliente;
@@ -73,19 +72,19 @@ public class Contrato {
 		this.descripcion = descripcion;
 	}
 
-	public java.util.Date  getFechaInicial() {
+	public String  getFechaInicial() {
 		return fechaInicial;
 	}
 
-	public void setFechaInicial(Date fechaInicial) {
+	public void setFechaInicial(String fechaInicial) {
 		this.fechaInicial = fechaInicial;
 	}
 
-	public java.util.Date  getFechaFinal() {
+	public String  getFechaFinal() {
 		return fechaFinal;
 	}
 
-	public void setFechaFinal(Date fechaFinal) {
+	public void setFechaFinal(String fechaFinal) {
 		this.fechaFinal = fechaFinal;
 	}
 
@@ -106,11 +105,11 @@ public class Contrato {
 	}
 
 	public Long getCostoTotal() {
-		return costoTotal;
+		return costo;
 	}
 
 	public void setCostoTotal(Long costoTotal) {
-		this.costoTotal = costoTotal;
+		this.costo = costoTotal;
 	}
 
 	public Long getIdApartamento() {
