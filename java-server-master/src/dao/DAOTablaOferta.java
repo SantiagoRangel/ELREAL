@@ -6,7 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import vos.Habitacion;
 import vos.Oferta;
 
 public class DAOTablaOferta {
@@ -67,7 +69,7 @@ public class DAOTablaOferta {
 //		}
 //		 
 		String sql = String.format("INSERT INTO %1$s.OFERTA (IDVIVIENDA, IDAPARTAMENTO, IDHABITACION, IDOFERTA, FECHAINICIAL, FECHAFINAL, DISPONIBLE, DESCRIPCION, IDOPERADOR) "
-                        + "VALUES (%2$s, %3$s, %4$s, %5$s, '%6$s', '%7$s', %8$s, %9$s, %10$s)", 
+                        + "VALUES (%2$s, %3$s, %4$s, %5$s, '%6$s', '%7$s', %8$s, '%9$s', %10$s)", 
 				USUARIO, 
 				oferta.getIdVivienda(),
 				oferta.getIdApartamento(),
@@ -75,7 +77,7 @@ public class DAOTablaOferta {
 				oferta.getIdOferta(),
 				oferta.getFechaInicial(),
 				oferta.getFechaFinal(),
-				oferta.getDisponible(),
+				1,
 				oferta.getDescripcion(),
 				oferta.getIdOperador()
 				);
@@ -131,21 +133,51 @@ System.out.println(sql);
 	}	
 	
 	
-//	public void updateOferta(Usuario usuario) throws SQLException, Exception {
-//
-//		StringBuilder sql = new StringBuilder();
-//		sql.append(String.format("UPDATE %s.HABITACION SET ", USUARIO));
-//		sql.append(String.format("UBICACION = '%1$s' AND DESCRIPCION = '%2$s' AND PRECIO = '%3$s'"
-//				+ " AND IDHABITACION = '%4$s' AND TAMANO = '%5$s' AND IDOPERADOR = '%6$s' ", habitacion.getUbicacion(),
-//		habitacion.getDescripcion(), habitacion.getPrecio(),habitacion.getIdHabitacion(),habitacion.getTamano(), habitacion.getIdOperador() ));
-//		
-//		System.out.println(sql);
-//		
-//		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
-//		recursos.add(prepStmt);
-//		prepStmt.executeQuery();
-//	}
+	public void updateOferta(Oferta oferta) throws SQLException, Exception {
 
+		StringBuilder sql = new StringBuilder();
+		sql.append(String.format("UPDATE %s.OFERTA SET ", USUARIO));
+		sql.append(String.format("IDVIVIENDA = %1$s AND IDAPARTAMENTO = %2$s AND IDHABITACION = %3$s"
+				+ " AND IDOFERTA = %4$s AND IDOPERADOR = %5$s AND FECHAINICIAL = '%6$s'AND FECHAFINAL = '%7$s' AND DISPONIBLE = %8$s AND DESCRIPCION = '%9$s' ", oferta.getIdVivienda(),
+		oferta.getIdApartamento(), oferta.getIdHabitacion(),oferta.getIdOferta(),oferta.getFechaFinal(), oferta.getFechaInicial(), oferta.getDisponible(), oferta.getDescripcion() ));
+		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta() );
+		System.out.println(sql);
+		
+		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
+		recursos.add(prepStmt);
+		prepStmt.executeQuery();
+		
+	}
+
+	public void habilitarOferta(Oferta oferta) throws SQLException
+	{
+		StringBuilder sql = new StringBuilder();
+		sql.append (String.format ("UPDATE %s.OFERTA ", USUARIO));
+		sql.append (String.format (
+				"SET DISPONIBLE = %1$s",
+				1));
+		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta());
+		System.out.println(sql);
+		
+		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
+		recursos.add(prepStmt);
+		prepStmt.executeQuery();
+	}
+	
+	public void deshabilitarOferta(Oferta oferta) throws SQLException
+	{
+		StringBuilder sql = new StringBuilder();
+		sql.append (String.format ("UPDATE %s.OFERTA ", USUARIO));
+		sql.append (String.format (
+				"SET DISPONIBLE = %1$s",
+				0));
+		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta());
+		System.out.println(sql);
+		
+		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
+		recursos.add(prepStmt);
+		prepStmt.executeQuery();
+	}
 	public void deleteOferta(Long id) throws SQLException, Exception {
 
 		String sql = String.format("DELETE FROM %1$s.OFERTA WHERE IDOFERTA = %2$d", USUARIO, id);
@@ -166,12 +198,8 @@ System.out.println(sql);
 		Long idOperador = resultSet.getLong("IDOPERADOR");
 		String fechaInicial  = resultSet.getString("FECHAINICIAL");
 		String fechaFinal  = resultSet.getString("FECHAFINAL");
-
-
-		Oferta oferta = new Oferta(idVivienda, idApartamento, idHabitacion, idOferta, fechaInicial, fechaFinal, idOperador);
 		Long disponible  = resultSet.getLong("DISPONIBLE");
 		String descripcion  = resultSet.getString("DESCRIPCION");
-		String fechaFinal  = resultSet.getString("FECHAFINAL");
 
 
 		Oferta oferta = new Oferta(idVivienda, idApartamento, idHabitacion, idOferta, fechaInicial, fechaFinal, disponible, descripcion, idOperador);
@@ -218,5 +246,15 @@ System.out.println(sql);
 			ofertas.add(convertResultSetToOferta(rs));
 		}
 		return ofertas;
+	}
+	
+	public List getHabitacionesHabilitadas()
+	{
+		List<Habitacion> habitaciones= new ArrayList<Habitacion>();
+		
+		
+		return habitaciones;
+		
+		
 	}
 }

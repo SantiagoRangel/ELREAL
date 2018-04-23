@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.sql.Date;
 
@@ -193,10 +194,12 @@ System.out.println(sql);
 		Long idCliente = resultSet.getLong("IDCLIENTE");
 		Long idOperador = resultSet.getLong("IDOPERADOR");
 		Long idVivienda = resultSet.getLong("IDVIVIENDA");
-	
 		Contrato contrato = new Contrato(descripcion, fechaInicial, fechaFinal, idContrato, noches, costo, idApartamento, idHabitacion, idCliente, idOperador,idVivienda);
 		return contrato;
 	}
 	
-	
+	public void reservaColectiva()
+	{
+		
+	}
 }

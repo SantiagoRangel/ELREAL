@@ -34,6 +34,7 @@ import vos.PersonaNatural;
 import vos.ReqI;
 import vos.ReqV;
 import vos.ReqVII;
+import vos.ReservaColectiva;
 import vos.Vivienda;
 import vos.ViviendaUniversitaria;
 
@@ -1822,4 +1823,78 @@ public class AlohaTM {
 			}
 			return req;
 		}
+	public void habilitarOferta(Oferta oferta) throws SQLException {
+	
+		DAOTablaOferta daoOferta = new DAOTablaOferta();
+		try 
+		{
+			//////transaccion
+			
+			this.conn = darConexion();
+			daoOferta.setConn(conn);
+			daoOferta.habilitarOferta(oferta);;
+			conn.commit();
+
+		} catch (SQLException e) {
+			System.err.println("SQLException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} catch (Exception e) {
+			System.err.println("GeneralException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} finally {
+			try {
+				daoOferta.cerrarRecursos();
+				if(this.conn!=null)
+					this.conn.close();
+			} catch (SQLException exception) {
+				System.err.println("SQLException closing resources:" + exception.getMessage());
+				exception.printStackTrace();
+				throw exception;
+			}
+		}
+	}
+	public void deshabilitarOferta(Oferta oferta) throws SQLException {
+		DAOTablaOferta daoOferta = new DAOTablaOferta();
+		try 
+		{
+			//////transaccion
+			
+			this.conn = darConexion();
+			daoOferta.setConn(conn);
+			daoOferta.deshabilitarOferta(oferta);;
+			conn.commit();
+
+		} catch (SQLException e) {
+			System.err.println("SQLException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} catch (Exception e) {
+			System.err.println("GeneralException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} finally {
+			try {
+				daoOferta.cerrarRecursos();
+				if(this.conn!=null)
+					this.conn.close();
+			} catch (SQLException exception) {
+				System.err.println("SQLException closing resources:" + exception.getMessage());
+				exception.printStackTrace();
+				throw exception;
+			}
+		}
+		
+	}
+	public void hacerReservaColectivaHabitaciones() throws Exception {
+		
+		List<Habitacion> habitaciones = this.getAllHabitaciones();
+		ReservaColectiva reserva = new ReservaColectiva(null);
+		
+		for (int i = 0; i < array.length; i++) {
+			
+		}
+		return reserva;
+	}
 }
