@@ -6,6 +6,7 @@ import javax.servlet.ServletContext;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -95,6 +96,32 @@ public class OfertasService {
 			return Response.status(500).entity(doErrorMessage(e)).build();
 		}
 		return Response.status(200).entity(doBuenMessaje()).build();
+	}
+	@PUT
+	@Path( "{id: \\d+}"+"/hab" )
+	public Response habilitarOferta( @PathParam( "id" ) Long id ) throws Exception
+	{
+		AlohaTM tm = new AlohaTM(getPath());
+		Oferta oferta= tm.getOfertaById(id);
+		try {
+			tm.habilitarOferta(oferta);
+		} catch (Exception e) {
+			return Response.status(500).entity(doErrorMessage(e)).build();
+		}
+		return Response.status(200).entity("Habilito la oferta "+id).build();
+	}
+	@PUT
+	@Path( "{id: \\d+}"+"/deshab")
+	public Response deshabilitarOferta( @PathParam( "id" ) Long id ) throws Exception
+	{
+		AlohaTM tm = new AlohaTM(getPath());
+		Oferta oferta= tm.getOfertaById(id);
+		try {
+			tm.deshabilitarOferta(oferta);
+		} catch (Exception e) {
+			return Response.status(500).entity(doErrorMessage(e)).build();
+		}
+		return Response.status(200).entity("desHabilito la oferta "+id).build();
 	}
 
 }

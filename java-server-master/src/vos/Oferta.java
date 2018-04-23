@@ -4,6 +4,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 public class Oferta{   
 	
+
 	    @JsonProperty(value="fechaFinal")
 	private String fechaFinal;	
         
@@ -27,9 +28,10 @@ public class Oferta{
 	
         @JsonProperty(value="idVivienda")
 	private Long idVivienda;
-        
         @JsonProperty(value="idOperador")
-    private Long idOperador;
+    	private Long idOperador;
+        
+
          
 	public Oferta(@JsonProperty(value="idVivienda") Long idVivienda,
 			@JsonProperty(value="idApartamento")Long idApartamento,
