@@ -4,24 +4,18 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 public class Oferta{   
 	
-<<<<<<< HEAD
-	@JsonProperty(value="fechaFinal")
-=======
+
 	    @JsonProperty(value="fechaFinal")
->>>>>>> 472bb3c06a9b673ffa2c260c57ee0aa8548619d4
 	private String fechaFinal;	
         
         @JsonProperty(value="fechaInicial")
 	private String fechaInicial;
-<<<<<<< HEAD
-=======
         
         @JsonProperty(value="disponible")
     private Long disponible;
         
         @JsonProperty(value="descripcion")
         private String descripcion;
->>>>>>> 472bb3c06a9b673ffa2c260c57ee0aa8548619d4
         
         @JsonProperty(value="idOferta")
 	private Long idOferta;
@@ -34,14 +28,10 @@ public class Oferta{
 	
         @JsonProperty(value="idVivienda")
 	private Long idVivienda;
-<<<<<<< HEAD
         @JsonProperty(value="idOperador")
     	private Long idOperador;
-=======
         
-        @JsonProperty(value="idOperador")
-    private Long idOperador;
->>>>>>> 472bb3c06a9b673ffa2c260c57ee0aa8548619d4
+
          
 	public Oferta(@JsonProperty(value="idVivienda") Long idVivienda,
 			@JsonProperty(value="idApartamento")Long idApartamento,
@@ -49,11 +39,8 @@ public class Oferta{
                         @JsonProperty(value="idOferta") Long idOferta,
                         @JsonProperty(value="fechaInicial") String fechaInicial,
                         @JsonProperty(value="fechaFinal") String fechaFinal,
-<<<<<<< HEAD
-=======
                         @JsonProperty(value="disponible") Long disponible,
                         @JsonProperty(value="disponible") String descripcion,
->>>>>>> 472bb3c06a9b673ffa2c260c57ee0aa8548619d4
                         @JsonProperty(value="idOperador") Long idOperador) 
         {
 		super();
@@ -63,11 +50,8 @@ public class Oferta{
                 this.idApartamento=idApartamento;
                 this.fechaInicial=fechaInicial;
                 this.fechaFinal=fechaFinal;
-<<<<<<< HEAD
-=======
                 this.disponible=disponible;
                 this.descripcion=descripcion;
->>>>>>> 472bb3c06a9b673ffa2c260c57ee0aa8548619d4
                 this.idOperador= idOperador;
 	}
         
