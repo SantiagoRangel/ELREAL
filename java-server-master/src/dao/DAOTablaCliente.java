@@ -174,29 +174,29 @@ System.out.println(sql);
 	{
 		ArrayList<Cliente> ofertas = new ArrayList<Cliente>();
 		
-		String sql = String.format("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE",USUARIO);
+		/*String sql = String.format("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE",USUARIO);
 		
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
-		ResultSet rs = prepStmt.executeQuery();
+		ResultSet rs = prepStmt.executeQuery();*/
 		
-		sql = String.format("SELECT * FROM %1%s.CLIENTE WHERE IDCLIENTE IN ( SELECT IDENTIFICACIONI FROM (SELECT IDCLIENTE AS IDENTIFICACIONI, COUNT (IDCONTRATO) AS CUENTA FROM CONTRATO WHERE ID%2$s = %3$d GROUP BY IDCLIENTE) WHERE CUENTA >= 3) OR IDCLIENTE IN (SELECT IDENTIFICACIONII FROM( SELECT IDCLIENTE AS IDENTIFICACIONII, SUM (NOCHES) AS TIEMPO FROM CONTRATO WHERE ID%2$s = %3$d GROUP BY IDCLIENTE) WHERE TIEMPO >=15)"
+		String sql = String.format("SELECT * FROM %1%s.CLIENTE WHERE IDCLIENTE IN ( SELECT IDENTIFICACIONI FROM (SELECT IDCLIENTE AS IDENTIFICACIONI, COUNT (IDCONTRATO) AS CUENTA FROM CONTRATO WHERE ID%2$s = %3$d GROUP BY IDCLIENTE) WHERE CUENTA >= 3) OR IDCLIENTE IN (SELECT IDENTIFICACIONII FROM( SELECT IDCLIENTE AS IDENTIFICACIONII, SUM (NOCHES) AS TIEMPO FROM CONTRATO WHERE ID%2$s = %3$d GROUP BY IDCLIENTE) WHERE TIEMPO >=15)"
 				,USUARIO, tipo, id);
 
-		prepStmt = conn.prepareStatement(sql);
+		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
-		rs = prepStmt.executeQuery();
+		ResultSet rs = prepStmt.executeQuery();
 
 		while (rs.next()) {
 			ofertas.add(convertResultSetToCliente(rs));
 		}
 		
-		sql = String.format("COMMIT"
+		/*sql = String.format("COMMIT"
 				,USUARIO);
 		
 		prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
-		rs = prepStmt.executeQuery();
+		rs = prepStmt.executeQuery();*/
 		
 		return ofertas;
 	}

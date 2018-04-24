@@ -25,33 +25,29 @@ public class ReqIV {
 		this.idViv = idViv;
 	}
 
-/**
-     * @return the empieza
-     */
-    public Date getEmpieza() {
-        return empieza;
-    }
+	public Long getIdHab() {
+		return idHab;
+	}
 
-    /**
-     * @param proveedor the empieza to set
-     */
-    public void setEmpieza(Date empieza) {
-        this.empieza = empieza;
-    }
+	public void setIdHab(Long idHab) {
+		this.idHab = idHab;
+	}
 
-    /**
-     * @return the termina
-     */
-    public Date getTermina() {
-        return termina;
-    }
+	public Long getIdApt() {
+		return idApt;
+	}
 
-    /**
-     * @param ingresos the termina to set
-     */
-    public void setTermina(Date termina) {
-        this.termina = termina;
-    }
+	public void setIdApt(Long idApt) {
+		this.idApt = idApt;
+	}
+
+	public Long getIdViv() {
+		return idViv;
+	}
+
+	public void setIdViv(Long idViv) {
+		this.idViv = idViv;
+	}
 	
 }
 
