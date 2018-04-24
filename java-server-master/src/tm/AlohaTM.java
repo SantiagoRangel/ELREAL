@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -1895,15 +1896,46 @@ public class AlohaTM {
 			}
 		}
 	}
-	public void deshabilitarOferta(Oferta oferta) throws SQLException {
+	public void deshabilitarOferta(Oferta oferta) throws Exception {
 		DAOTablaOferta daoOferta = new DAOTablaOferta();
+		DAOTablaContrato daoTablaContrato= new DAOTablaContrato();
+		try 
+		{
+			//////transaccion
+			
+			this.conn = darConexion();
+			daoTablaContrato.setConn(conn);
+			if (daoTablaContrato.existeContratoConOferta(oferta)) {
+				daoTablaContrato.reAsignar(oferta);
+			}
+			conn.commit();
+
+		} catch (SQLException e) {
+			System.err.println("SQLException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} catch (Exception e) {
+			System.err.println("GeneralException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} finally {
+			try {
+				daoOferta.cerrarRecursos();
+				if(this.conn!=null)
+					this.conn.close();
+			} catch (SQLException exception) {
+				System.err.println("SQLException closing resources:" + exception.getMessage());
+				exception.printStackTrace();
+				throw exception;
+			}
+		}
 		try 
 		{
 			//////transaccion
 			
 			this.conn = darConexion();
 			daoOferta.setConn(conn);
-			daoOferta.deshabilitarOferta(oferta);;
+			daoOferta.deshabilitarOferta(oferta);
 			conn.commit();
 
 		} catch (SQLException e) {
@@ -1929,7 +1961,7 @@ public class AlohaTM {
 	}
 	public ReservaColectiva hacerReservaColectivaHabitaciones(int j, ReservaColectiva reservaColectiva) throws Exception {
 		
-		List<Habitacion> habitaciones = this.getAllHabitaciones();
+		List<Habitacion> habitaciones = this.getHabitacionesHabilitadas1();
 		Long costo = reservaColectiva.getCosto();
 		String descripcion = reservaColectiva.getDescripcion();
 		String fechaFinal = reservaColectiva.getFechaFinal();
@@ -1986,7 +2018,7 @@ public class AlohaTM {
 	
 	public ReservaColectiva hacerReservaColectivaApartamento(int var, ReservaColectiva reservaColectiva) throws Exception {
 		// TODO Auto-generated method stub
-		List<Apartamento> habitaciones = this.getAllApartamentos();
+		List<Apartamento> habitaciones = this.getApartamentosHabilitados();
 		Long costo = reservaColectiva.getCosto();
 		String descripcion = reservaColectiva.getDescripcion();
 		String fechaFinal = reservaColectiva.getFechaFinal();
@@ -2006,12 +2038,12 @@ public class AlohaTM {
 			this.conn = darConexion();
 			daoHabitaciones.setConn(conn);
 			for (int i = 1; (i < var)&&(i<idClientes.size()); i++) {
-				Long idHabitacioni =habitaciones.get(i-1).getIdApartamento();
+				Long idApto =habitaciones.get(i-1).getIdApartamento();
 				Long idCliente =  idClientes.get(i-1);
 				Long idOperador = habitaciones.get(i-1).getIdPersonaNatural();
 				Long variable = Long.parseLong(""+i);
 				
-				Contrato contrato = new Contrato(descripcion, fechaInicial, fechaFinal, idReservaColectiva + variable, noches, costo, null, idHabitacioni, idCliente, idOperador, null);
+				Contrato contrato = new Contrato(descripcion, fechaInicial, fechaFinal, idReservaColectiva + variable, noches, costo, idApto, null, idCliente, idOperador, null);
 				daoHabitaciones.registrarContrato(contrato);
 				System.out.println("se registro el contrato"+i);
 			}
@@ -2041,7 +2073,7 @@ public class AlohaTM {
 	}
 	public ReservaColectiva hacerReservaColectivaVivienda(int var, ReservaColectiva reservaColectiva) throws Exception {
 
-		List<Vivienda> habitaciones = this.getAllViviendas();
+		List<Vivienda> habitaciones = this.getViviendasHabilitadas();
 		Long costo = reservaColectiva.getCosto();
 		String descripcion = reservaColectiva.getDescripcion();
 		String fechaFinal = reservaColectiva.getFechaFinal();
@@ -2061,12 +2093,11 @@ public class AlohaTM {
 			this.conn = darConexion();
 			daoHabitaciones.setConn(conn);
 			for (int i = 1; (i < var)&&(i<idClientes.size()); i++) {
-				Long idHabitacioni =habitaciones.get(i-1).getIdVivienda();
+				Long idVivienda =habitaciones.get(i-1).getIdVivienda();
 				Long idCliente =  idClientes.get(i-1);
 				Long idOperador = habitaciones.get(i-1).getIdPersonaNatural();
 				Long variable = Long.parseLong(""+i);
-				
-				Contrato contrato = new Contrato(descripcion, fechaInicial, fechaFinal, idReservaColectiva + variable, noches, costo, null, idHabitacioni, idCliente, idOperador, null);
+				Contrato contrato = new Contrato(descripcion, fechaInicial, fechaFinal, idReservaColectiva + variable, noches, costo, null, null, idCliente, idOperador, idVivienda);
 				daoHabitaciones.registrarContrato(contrato);
 				System.out.println("se registro el contrato"+i);
 			}
@@ -2125,5 +2156,64 @@ public class AlohaTM {
 			}
 		}
 		
+	}
+	public List<Habitacion> getHabitacionesHabilitadas() throws Exception {
+		DAOTablaHabitacion daoHabitacion = new DAOTablaHabitacion();
+		List<Habitacion> habitaciones;
+		try 
+		{
+			this.conn = darConexion();
+			daoHabitacion.setConn(conn);
+			
+			//Por simplicidad, solamente se obtienen los primeros 50 resultados de la consulta
+			habitaciones = daoHabitacion.getHabitaciones();
+		}
+		
+		catch (SQLException sqlException) {
+			System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());
+			sqlException.printStackTrace();
+			throw sqlException;
+		} 
+		catch (Exception exception) {
+			System.err.println("[EXCEPTION] General Exception:" + exception.getMessage());
+			exception.printStackTrace();
+			throw exception;
+		} 
+		finally {
+			try {
+				daoHabitacion.cerrarRecursos();
+				if(this.conn!=null){
+					this.conn.close();					
+				}
+			}
+			catch (SQLException exception) {
+				System.err.println("[EXCEPTION] SQLException While Closing Resources:" + exception.getMessage());
+				exception.printStackTrace();
+				throw exception;
+			}
+		}
+		List<Habitacion> rta = new ArrayList();
+		List<Oferta> ofertas = this.getAllOfertas();
+		for (int i = 0; i < ofertas.size(); i++) {
+			if (ofertas.get(i).getIdHabitacion()!=null && ofertas.get(i).getDisponible()== 1) {
+				Long idHab = ofertas.get(i).getIdHabitacion();
+				for (int j = 0; j < habitaciones.size(); j++) {
+					if (idHab == habitaciones.get(j).getIdHabitacion()) {
+						rta.add(habitaciones.get(j));
+					}
+				}
+			}
+			
+		}
+		return rta;
+	}
+	public List<Habitacion> getHabitacionesHabilitadas1() throws Exception {
+		return this.getAllHabitaciones();
+	}
+	public List<Apartamento> getApartamentosHabilitados() throws Exception {
+		return this.getAllApartamentos();
+	}
+	public List<Vivienda> getViviendasHabilitadas() throws Exception {
+		return this.getAllViviendas();
 	}
 }

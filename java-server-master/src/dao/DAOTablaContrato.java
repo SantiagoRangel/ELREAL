@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.sql.Date;
 
 import vos.Contrato;
+import vos.Oferta;
 
 public class DAOTablaContrato {
 
@@ -207,8 +208,155 @@ public class DAOTablaContrato {
 		return contrato;
 	}
 	
-	public void reservaColectiva()
-	{
+
+
+	public boolean existeContratoConOferta(Oferta oferta) throws SQLException {
+		System.out.println("entra al metodo de existe el contrato");
+		boolean rta = false;
+		Contrato contrato = null;
+		if (oferta.getIdHabitacion()!=null) {
+			String sql = String.format("SELECT * FROM %1$s.CONTRATO WHERE IDHABITACION = %2$d", USUARIO, oferta.getIdHabitacion()); 
+			PreparedStatement prepStmt = conn.prepareStatement(sql);
+			recursos.add(prepStmt);
+			ResultSet rs = prepStmt.executeQuery();
+
+			if(rs.next()) {
+				contrato = convertResultSetToContrato(rs);
+			}
+			if (contrato!= null) {
+				rta = true;
+			}
+
+			 
+		}
+		else if (oferta.getIdApartamento()!=null) {
+			String sql = String.format("SELECT * FROM %1$s.CONTRATO WHERE IDAPARTAMENTO = %2$d", USUARIO, oferta.getIdApartamento()); 
+			PreparedStatement prepStmt = conn.prepareStatement(sql);
+			recursos.add(prepStmt);
+			ResultSet rs = prepStmt.executeQuery();
+
+			if(rs.next()) {
+				contrato = convertResultSetToContrato(rs);
+			}
+			if (contrato!= null) {
+				rta = true;
+			}
+
+		}
+		else if (oferta.getIdVivienda()!=null) {
+			String sql = String.format("SELECT * FROM %1$s.CONTRATO WHERE IDVIVIENDA = %2$d", USUARIO, oferta.getIdVivienda());
+			PreparedStatement prepStmt = conn.prepareStatement(sql);
+			recursos.add(prepStmt);
+			ResultSet rs = prepStmt.executeQuery();
+
+			if(rs.next()) {
+				contrato = convertResultSetToContrato(rs);
+			}
+			if (contrato!= null) {
+				rta = true;
+			}
+
+
+		}
 		
+		
+		System.out.println("acaba el metodo de existe");
+		
+		return rta;
+	}
+
+	public void reAsignar(Oferta oferta) throws Exception {
+		System.out.println("entra en el metodo de reasiganar");
+
+		Contrato contrato = null;
+		if (oferta.getIdHabitacion()!=null) {
+			String sql = String.format("SELECT * FROM %1$s.CONTRATO WHERE IDHABITACION = %2$d", USUARIO, oferta.getIdHabitacion()); 
+			PreparedStatement prepStmt = conn.prepareStatement(sql);
+			recursos.add(prepStmt);
+			ResultSet rs = prepStmt.executeQuery();
+
+			if(rs.next()) {
+				contrato = convertResultSetToContrato(rs);
+			}
+		
+
+			Long idHabitacion = Long.parseLong(""+10005);
+			Long idOperador = Long.parseLong(""+10004);
+
+			Contrato contratoNuevo = new Contrato(contrato.getDescripcion() + "Nuevo", contrato.getFechaInicial(),
+													contrato.getFechaFinal(), contrato.getIdContrato()+10000, contrato.getNoches(),
+													contrato.getCostoTotal(),
+													null, 
+													idHabitacion,
+													contrato.getIdCliente(),
+													idOperador,
+													null);
+			System.out.println(contratoNuevo.getDescripcion());
+			System.out.println(contratoNuevo.getFechaFinal());
+			System.out.println(contratoNuevo.getFechaInicial());
+			System.out.println(contratoNuevo.getIdContrato());
+			System.out.println(contratoNuevo.getNoches());
+			System.out.println(contratoNuevo.getCostoTotal());
+			System.out.println(contratoNuevo.getIdApartamento());
+			System.out.println(contratoNuevo.getIdHabitacion());
+			System.out.println(contratoNuevo.getIdCliente());
+			System.out.println(contratoNuevo.getIdVivienda());
+			System.out.println(contratoNuevo.getIdOperador());
+
+			this.deleteContrato(contrato.getIdContrato());
+			this.registrarContrato(contratoNuevo);
+		}
+		else if (oferta.getIdApartamento()!=null) {
+			String sql = String.format("SELECT * FROM %1$s.CONTRATO WHERE IDAPARTAMENTO = %2$d", USUARIO, oferta.getIdApartamento()); 
+			PreparedStatement prepStmt = conn.prepareStatement(sql);
+			recursos.add(prepStmt);
+			ResultSet rs = prepStmt.executeQuery();
+
+			if(rs.next()) {
+				contrato = convertResultSetToContrato(rs);
+			}
+			Long idApto = Long.parseLong(""+10001);
+			Long idOperador = Long.parseLong(""+10004);
+
+			Contrato contratoNuevo = new Contrato(contrato.getDescripcion() + "Nuevo", contrato.getFechaInicial(),
+													contrato.getFechaFinal(), contrato.getIdContrato()+10000, contrato.getNoches(),
+													contrato.getCostoTotal(),
+													idApto, 
+													null,
+													contrato.getIdCliente(),
+													contrato.getIdOperador(),
+													null);
+			this.registrarContrato(contratoNuevo);
+
+		}
+		else if (oferta.getIdVivienda()!=null) {
+			String sql = String.format("SELECT * FROM %1$s.CONTRATO WHERE IDVIVIENDA = %2$d", USUARIO, oferta.getIdVivienda());
+			PreparedStatement prepStmt = conn.prepareStatement(sql);
+			recursos.add(prepStmt);
+			ResultSet rs = prepStmt.executeQuery();
+
+			if(rs.next()) {
+				contrato = convertResultSetToContrato(rs);
+			}
+			Long idVvienda = Long.parseLong(""+10001);
+			Long idOperador = Long.parseLong(""+10005);
+
+			Contrato contratoNuevo = new Contrato(contrato.getDescripcion() + "Nuevo", contrato.getFechaInicial(),
+													contrato.getFechaFinal(), contrato.getIdContrato()+10000, contrato.getNoches(),
+													contrato.getCostoTotal(),
+													null, 
+													null,
+													contrato.getIdCliente(),
+													contrato.getIdOperador(),
+													idVvienda);
+			
+			this.registrarContrato(contratoNuevo);
+
+		}
+		
+		this.deleteContrato(contrato.getIdContrato());
+		
+		System.out.println("reasigna");
+
 	}
 }
