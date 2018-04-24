@@ -1763,7 +1763,7 @@ public class AlohaTM {
 		}
 		return req;
 	}
-	public List<Cliente> getRequerimientoVIII() throws Exception {
+	public List<Cliente> getRequerimientoVIII(Long id, String tipo) throws Exception {
 		DAOTablaCliente dao = new DAOTablaCliente();
 		List<Cliente> req;
 		try 
@@ -1772,7 +1772,7 @@ public class AlohaTM {
 			dao.setConn(conn);
 			
 			
-			req = dao.getReqVIII();
+			req = dao.getReqVIII(id, tipo);
 		}
 		catch (SQLException sqlException) {
 			System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());
@@ -1871,7 +1871,7 @@ public class AlohaTM {
 			}
 			return req;
 		}
-	 public List<ReqIV> getRequerimientoIV() throws Exception {
+	 public List<ReqIV> getRequerimientoIV(Long id, String fi, String ff) throws Exception {
 			DAOReqIV dao = new DAOReqIV();
 			List<ReqIV> req;
 			try 
@@ -1880,7 +1880,7 @@ public class AlohaTM {
 				dao.setConn(conn);
 				
 				
-				req = dao.getReqIV();
+				req = dao.getReqIV(ff,fi,id);
 			}
 			catch (SQLException sqlException) {
 				System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());
@@ -1907,7 +1907,7 @@ public class AlohaTM {
 			}
 			return req;
 		}
-	 public List<ReqVI> getRequerimientoVI() throws Exception {
+	 public List<ReqVI> getRequerimientoVI(Long id) throws Exception {
 			DAOReqVI dao = new DAOReqVI();
 			List<ReqVI> req;
 			try 
@@ -1916,7 +1916,7 @@ public class AlohaTM {
 				dao.setConn(conn);
 				
 				
-				req = dao.getReqVI();
+				req = dao.getReqVI(id);
 			}
 			catch (SQLException sqlException) {
 				System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());
