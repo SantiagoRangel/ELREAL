@@ -15,6 +15,7 @@ import tm.AlohaTM;
 import vos.Oferta;
 import vos.Cliente;
 import vos.ReqI;
+import vos.ReqIII;
 import vos.ReqV;
 import vos.ReqVII;
 
@@ -77,6 +78,22 @@ public class ConsultasService {
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
 			List<Oferta> apto = tm.getRequerimientoII();
+			return Response.status( 200 ).entity( apto ).build( );			
+		}
+		catch( Exception e )
+		{
+			return Response.status( 500 ).entity( doErrorMessage( e ) ).build( );
+		}
+	}
+	@GET
+	@Path( "requerimientoIII" )
+	@Produces( { MediaType.APPLICATION_JSON } )
+	public Response getRequerimientoIII()
+	{
+		try{
+			AlohaTM tm = new AlohaTM( getPath( ) );
+			
+			List<ReqIII> apto = tm.getRequerimientoIII();
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )

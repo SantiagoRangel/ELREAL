@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Properties;
 
 import dao.DAOReqI;
+import dao.DAOReqIII;
 import dao.DAOReqV;
 import dao.DAOReqVII;
 import dao.DAOTablaApartamento;
@@ -34,6 +35,7 @@ import vos.Oferta;
 import vos.Operador;
 import vos.PersonaNatural;
 import vos.ReqI;
+import vos.ReqIII;
 import vos.ReqV;
 import vos.ReqVII;
 import vos.ReservaColectiva;
@@ -1799,6 +1801,42 @@ public class AlohaTM {
 				
 				
 				req = dao.getReqV();
+			}
+			catch (SQLException sqlException) {
+				System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());
+				sqlException.printStackTrace();
+				throw sqlException;
+			} 
+			catch (Exception exception) {
+				System.err.println("[EXCEPTION] General Exception:" + exception.getMessage());
+				exception.printStackTrace();
+				throw exception;
+			} 
+			finally {
+				try {
+					dao.cerrarRecursos();
+					if(this.conn!=null){
+						this.conn.close();					
+					}
+				}
+				catch (SQLException exception) {
+					System.err.println("[EXCEPTION] SQLException While Closing Resources:" + exception.getMessage());
+					exception.printStackTrace();
+					throw exception;
+				}
+			}
+			return req;
+		}
+	 public List<ReqIII> getRequerimientoIII() throws Exception {
+			DAOReqIII dao = new DAOReqIII();
+			List<ReqIII> req;
+			try 
+			{
+				this.conn = darConexion();
+				dao.setConn(conn);
+				
+				
+				req = dao.getReqIII();
 			}
 			catch (SQLException sqlException) {
 				System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());

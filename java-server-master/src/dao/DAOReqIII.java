@@ -6,13 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import vos.ReqV;
+import vos.ReqI;
+import vos.ReqIII;
 
 /**
  * Clase DAO que se conecta la base de datos usando JDBC para resolver los requerimientos de la 
  * aplicación
  * @author Grupo A - 16*/
-public class DAOReqV{
+public class DAOReqIII{
 
 	
 	public final static String USUARIO = "ISIS2304A241810";
@@ -30,7 +31,7 @@ public class DAOReqV{
 	 * Metodo constructor que crea DAOIngrediente
 	 * <b>post: </b> Crea la instancia del DAO e inicializa el Arraylist de recursos
 	 */
-	public DAOReqV() {
+	public DAOReqIII() {
 		recursos = new ArrayList<Object>();
 	}
 
@@ -58,41 +59,31 @@ public class DAOReqV{
 		this.conn = con;
 	}
         
-	public ArrayList<ReqV> getReqV() throws SQLException 
+	public ArrayList<ReqIII> getReqIII() throws SQLException 
         {
-                ArrayList<ReqV> resp = new ArrayList<ReqV>();
+                ArrayList<ReqIII> resp = new ArrayList<ReqIII>();
                 
-		String sql = String.format("SELECT COUNT (IDHOTEL) AS HOTEL, " +
-"COUNT (IDHOSTAL) AS HOSTAL, " +
-"COUNT (IDPERSONANATURAL) AS PERSONA, " +
-"COUNT (IDVIVIENDAUNIVERSITARIA) AS VIVIENDA" +
-"FROM ((((CONTRATO LEFT OUTER JOIN HOTEL ON HOTEL.IDHOTEL = CONTRATO.IDOPERADOR)" +
-"LEFT OUTER JOIN HOSTAL ON HOSTAL.IDHOSTAL = CONTRATO.IDOPERADOR) " +
-"LEFT OUTER JOIN PERSONANATURAL ON PERSONANATURAL.IDPERSONANATURAL = CONTRATO.IDOPERADOR)" +
-"LEFT OUTER JOIN VIVIENDAUNIVERSITARIA ON VIVIENDAUNIVERSITARIA.IDVIVIENDAUNIVERSITARIA = CONTRATO.IDOPERADOR)");
+		String sql = String.format("SELECT SUM(NOCHES/TIEMPO) AS INDICE, IDOFERTA FROM (SELECT TIEMPO, IDOFERTA, NOCHES FROM ((SELECT (TO_DATE(OFERTA.FECHAFINAL,  'YYYY-MM-DD HH24:MI:SS') - TO_DATE(OFERTA.FECHAINICIAL,  'YYYY-MM-DD HH24:MI:SS')) AS TIEMPO, IDOFERTA, IDHABITACION AS HAB, IDAPARTAMENTO AS APT, IDVIVIENDA AS VIV FROM OFERTA)INNER JOIN CONTRATO ON NVL(HAB,0) = NVL(CONTRATO.IDHABITACION,0) AND NVL(APT,0) = NVL(CONTRATO.IDAPARTAMENTO,0) AND NVL(VIV,0) = NVL(CONTRATO.IDVIVIENDA,0))) GROUP BY IDOFERTA"
+				, USUARIO);
 
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
 		ResultSet rs = prepStmt.executeQuery();
                 while (rs.next()) {
-			resp.add(convertResultSetToReqV(rs));
+			resp.add(convertResultSetToReqIII(rs));
 		}
 		return resp;
                 
 	}
 
-    public ReqV convertResultSetToReqV(ResultSet resultSet) throws SQLException {		
+    public ReqIII convertResultSetToReqIII(ResultSet resultSet) throws SQLException {		
 		
-		Integer hotel = resultSet.getInt("HOTEL");
-                Integer hostal = resultSet.getInt("HOSTAL");
-                Integer vivienda = resultSet.getInt("VIVIENDA");                
-		Integer persona = resultSet.getInt("PERSONA");
+		Long idOferta = resultSet.getLong("IDOFERTA");
+		Double indice = resultSet.getDouble("INDICE");
 	
 	
-		ReqV op = new ReqV(persona, vivienda, hotel, hostal);
+		ReqIII op = new ReqIII(indice, idOferta);
 		return op;
 	}
 }
-
-
 
