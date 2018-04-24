@@ -157,19 +157,18 @@ System.out.println(sql);
 //		recursos.add(prepStmt);
 //		prepStmt.executeQuery();
 		
-		StringBuilder sql1= new StringBuilder();
-		sql1.append (String.format ("SET TRANSACTION ISOLATION LEVEL SERIALIZABLE"));
-		System.out.println(sql1);
-
-		StringBuilder sql2= new StringBuilder();
-		sql2.append (String.format ("SET autocommit 0"));
-		System.out.println(sql2);
-
-		
+//		StringBuilder sql1= new StringBuilder();
+//		sql1.append (String.format ("SET TRANSACTION ISOLATION LEVEL SERIALIZABLE"));
+//		System.out.println(sql1);
+//
+//		StringBuilder sql2= new StringBuilder();
+//		sql2.append (String.format ("SET autocommit 0"));
+//		System.out.println(sql2);
+//
+//		
 		
 		StringBuilder sql = new StringBuilder();
-		sql.append (String.format ("SET TRANSACTION ISOLATION LEVEL SERIALIZABLE " +
-									"SET autocommit 0"+
+		sql.append (String.format (
 									"UPDATE %s.OFERTA ", USUARIO));
 		sql.append (String.format (
 				"SET DISPONIBLE = %1$s",
@@ -178,9 +177,9 @@ System.out.println(sql);
 		System.out.println(sql);
 
 
-		StringBuilder sql3= new StringBuilder();
-		sql3.append (String.format ("commit"));
-		System.out.println(sql3);
+//		StringBuilder sql3= new StringBuilder();
+//		sql3.append (String.format ("commit"));
+//		System.out.println(sql3);
 
 		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
 		recursos.add(prepStmt);
@@ -190,10 +189,7 @@ System.out.println(sql);
 //		recursos.add(prepStmt2);
 //		prepStmt2.executeQuery();
 //		prepStmt2.close();
-		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
-		recursos.add(prepStmt);
-		prepStmt.executeQuery();
-		prepStmt.close();
+
 //
 //		PreparedStatement prepStmt3 = conn.prepareStatement(sql3.toString());
 //		recursos.add(prepStmt3);

@@ -48,7 +48,27 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/MIO/rest/ofertas/10003/deshab",
+			"name": "http://localhost:8080/MIO/rest/ofertas/10003",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas/10003",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas/10003/hab",
 			"request": {
 				"url": "http://localhost:8080/MIO/rest/ofertas/10003/deshab",
 				"method": "PUT",
@@ -108,6 +128,26 @@
 			"response": []
 		},
 		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "http://localhost:8080/MIO/rest/reservaColectiva/reservaPrimera",
 			"request": {
 				"url": "http://localhost:8080/MIO/rest/reservaColectiva/reservaPrimera",
@@ -128,7 +168,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/MIO/rest/contratos",
+			"name": "http://localhost:8080/MIO/rest/contratos copy",
 			"request": {
 				"url": "http://localhost:8080/MIO/rest/contratos",
 				"method": "GET",
