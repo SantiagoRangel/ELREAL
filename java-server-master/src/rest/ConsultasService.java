@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.ServletContext;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -101,15 +102,16 @@ public class ConsultasService {
 	}
 	
 	@GET
-	@Path( "requerimientoVII" )
+	@Path( "requerimientoVII/"+"{id: \\d+}")
 	@Produces( { MediaType.APPLICATION_JSON } )
-	public Response getRequerimientoVII()
+	public Response getRequerimientoVII( @PathParam( "id" ) Long id)
 	{
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
-			List<ReqVII> apto = tm.getRequerimientoVII();
-			return Response.status( 200 ).entity( apto ).build( );			
+			//List<ReqVII> apto = tm.getRequerimientoVII(id, "hola");
+			tm.transaccion();
+			return Response.status( 200 ).entity( id ).build( );			
 		}
 		catch( Exception e )
 		{

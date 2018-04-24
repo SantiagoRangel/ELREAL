@@ -261,16 +261,16 @@ System.out.println(sql);
 	public ArrayList<Oferta> getReqIX() throws SQLException, Exception {
 		ArrayList<Oferta> ofertas = new ArrayList<Oferta>();
 
-        String sql = (String.format ("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE", USUARIO));
+        /*String sql = (String.format ("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE", USUARIO));
 		
 		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
 		recursos.add(prepStmt);
-		prepStmt.executeQuery();
+		prepStmt.executeQuery();*/
 		
-		sql = String.format("SELECT * FROM OFERTA WHERE IDOFERTA NOT IN (SELECT IDOFERTA FROM (SELECT NVL(IDVIVIENDA, 0) AS IDVII, NVL(IDHABITACION, 0) AS IDHII, NVL(IDAPARTAMENTO, 0) AS IDAII, IDOFERTA FROM OFERTA WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= SYSDATE AND TO_DATE(FECHAINICIAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')< ADD_MONTHS(SYSDATE, -1)) INNER JOIN (SELECT NVL(IDVIVIENDA, 0) AS IDVI, NVL(IDHABITACION, 0) AS IDHI, NVL(IDAPARTAMENTO, 0) AS IDAI FROM CONTRATO WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= ADD_MONTHS(SYSDATE, -1)) ON IDVII = IDVI AND IDHII = IDHI AND IDAII = IDAI) AND IDOFERTA IN (SELECT IDOFERTA FROM OFERTA WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= SYSDATE AND TO_DATE(FECHAINICIAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')< ADD_MONTHS(SYSDATE, -1))"
+		String sql = String.format("SELECT * FROM OFERTA WHERE IDOFERTA NOT IN (SELECT IDOFERTA FROM (SELECT NVL(IDVIVIENDA, 0) AS IDVII, NVL(IDHABITACION, 0) AS IDHII, NVL(IDAPARTAMENTO, 0) AS IDAII, IDOFERTA FROM OFERTA WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= SYSDATE AND TO_DATE(FECHAINICIAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')< ADD_MONTHS(SYSDATE, -1)) INNER JOIN (SELECT NVL(IDVIVIENDA, 0) AS IDVI, NVL(IDHABITACION, 0) AS IDHI, NVL(IDAPARTAMENTO, 0) AS IDAI FROM CONTRATO WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= ADD_MONTHS(SYSDATE, -1)) ON IDVII = IDVI AND IDHII = IDHI AND IDAII = IDAI) AND IDOFERTA IN (SELECT IDOFERTA FROM OFERTA WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= SYSDATE AND TO_DATE(FECHAINICIAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')< ADD_MONTHS(SYSDATE, -1))"
 				,USUARIO);
 
-		prepStmt = conn.prepareStatement(sql);
+		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
 		ResultSet rs = prepStmt.executeQuery();
 
@@ -278,12 +278,12 @@ System.out.println(sql);
 			ofertas.add(convertResultSetToOferta(rs));
 		}
 		
-		sql = String.format("COMMIT"
+		/*sql = String.format("COMMIT"
 				,USUARIO);
 		
 		prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
-		prepStmt.executeQuery();
+		prepStmt.executeQuery();*/
 		
 		return ofertas;
 	}

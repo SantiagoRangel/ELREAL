@@ -43,7 +43,7 @@ public class Contrato {
                 @JsonProperty(value="fechaFinal") String fechaFinal,
                 @JsonProperty(value="idContrato") Long idContrato,
                 @JsonProperty(value="noches") Long noches,
-		@JsonProperty(value="costo")Long costo,
+                @JsonProperty(value="costo")Long costo,
                 @JsonProperty(value="idApartamento") Long idApartamento,
                 @JsonProperty(value="idHabitacion") Long idHabitacion, 
                 @JsonProperty(value="idCliente") Long idCliente,
