@@ -168,7 +168,9 @@ System.out.println(sql);
 		
 		
 		StringBuilder sql = new StringBuilder();
-		sql.append (String.format ("UPDATE %s.OFERTA ", USUARIO));
+		sql.append (String.format ("SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;" +
+									"SET autocommit 0;"+
+									"UPDATE %s.OFERTA ", USUARIO));
 		sql.append (String.format (
 				"SET DISPONIBLE = %1$s",
 				1));
@@ -222,10 +224,11 @@ System.out.println(sql);
 		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta());
 		System.out.println(sql);
 		
-//		prepStmt = conn.prepareStatement(sql.toString());
-//		recursos.add(prepStmt);
-//		prepStmt.executeQuery();
-//		
+		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
+		recursos.add(prepStmt);
+		prepStmt.executeQuery();
+		prepStmt.close();
+		
 //		sqli = String.format("COMMIT"
 //				,USUARIO);
 //		
