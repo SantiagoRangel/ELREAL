@@ -1481,13 +1481,16 @@ public class AlohaTM {
 	
 	public List<ReqI> getRequerimientoI() throws Exception {
 		DAOReqI dao = new DAOReqI();
+		System.out.println("se mete al metodo del tm");
+
 		List<ReqI> req;
 		try 
 		{
 			this.conn = darConexion();
 			dao.setConn(conn);
 			
-			
+			System.out.println("llama al req1 del dao");
+
 			req = dao.getReqI();
 		}
 		catch (SQLException sqlException) {

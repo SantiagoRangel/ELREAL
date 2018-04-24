@@ -44,9 +44,12 @@ public class ConsultasService {
 	@Produces( { MediaType.APPLICATION_JSON } )
 	public Response getRequerimientoI()
 	{
+		System.out.println("se mete al metodo");
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
+			System.out.println("llama al req1 en el tm");
+
 			List<ReqI> apto = tm.getRequerimientoI();
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
