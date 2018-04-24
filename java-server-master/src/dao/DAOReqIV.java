@@ -7,12 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import vos.ReqI;
+import vos.ReqIII;
+import vos.ReqIV;
 
 /**
  * Clase DAO que se conecta la base de datos usando JDBC para resolver los requerimientos de la 
  * aplicación
  * @author Grupo A - 16*/
-public class DAOReqI{
+public class DAOReqIV{
 
 	
 	public final static String USUARIO = "ISIS2304A241810";
@@ -30,7 +32,7 @@ public class DAOReqI{
 	 * Metodo constructor que crea DAOIngrediente
 	 * <b>post: </b> Crea la instancia del DAO e inicializa el Arraylist de recursos
 	 */
-	public DAOReqI() {
+	public DAOReqIV() {
 		recursos = new ArrayList<Object>();
 	}
 
@@ -58,30 +60,30 @@ public class DAOReqI{
 		this.conn = con;
 	}
         
-	public ArrayList<ReqI> getReqI() throws SQLException 
+	public ArrayList<ReqIV> getReqIV(String fechaFinal, String fechaInicial, Long servicio) throws SQLException 
         {
-                ArrayList<ReqI> resp = new ArrayList<ReqI>();
+                ArrayList<ReqIV> resp = new ArrayList<ReqIV>();
                 
-		String sql = String.format("SELECT SUM(CONTRATO.COSTO) AS INGRESO, OPERADOR.IDOPERADOR AS PROVEEDOR FROM CONTRATO INNER JOIN OPERADOR ON CONTRATO.IDOPERADOR = OPERADOR.IDOPERADOR WHERE ((TO_DATE(CONTRATO.FECHAINIC,'YYYY-MM-DD')) - (ADD_MONTHS(TRUNC(SYSDATE),-12)))>=0 AND (SYSDATE-(TO_DATE(CONTRATO.FECHAINIC,'YYYY-MM-DD')))>=0 GROUP BY OPERADOR.IDOPERADOR"
-				, USUARIO);
+		String sql = String.format("SELECT HAB, APT, VIV FROM (SELECT HAB, APT, VIV, ((TO_DATE('%2$s',  'YYYY-MM-DD HH24:MI:SS'))-(TO_DATE(FF,  'YYYY-MM-DD HH24:MI:SS')))AS FFF, ((TO_DATE(FI,  'YYYY-MM-DD HH24:MI:SS'))-(TO_DATE('%3$s',  'YYYY-MM-DD HH24:MI:SS'))) AS FIF FROM (SELECT HAB, APT, VIV, FF, FI FROM (SELECT IDHAB FROM (SELECT IDSH, IDHAB FROM (SELECT IDSH, IDHAB FROM (SELECT IDSERVICIOHABITACION AS IDSH, IDHABITACION AS IDHAB FROM HABITACIONOFRECE) INNER JOIN (SELECT IDHABITACION AS IDSHI FROM HABITACION) ON IDSHI = IDHAB) INNER JOIN (SELECT IDSERVICIOHABITACION AS LOL FROM SERVICIOHABITACION) ON LOL = IDSH) WHERE IDSH = %4$d) INNER JOIN (SELECT FF, FI, HAB, APT, VIV FROM (SELECT FECHAFINAL AS FF, FECHAINICIAL AS FI, IDHABITACION AS HAB, IDAPARTAMENTO AS APT, IDVIVIENDA AS VIV, DISPONIBLE FROM OFERTA WHERE DISPONIBLE = 1)) ON HAB = IDHAB)) WHERE FFF >= 0 AND FIF >= 0"
+				, USUARIO, fechaFinal, fechaInicial, servicio);
 
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
 		ResultSet rs = prepStmt.executeQuery();
                 while (rs.next()) {
-			resp.add(convertResultSetToReqI(rs));
+			resp.add(convertResultSetToReqIV(rs));
 		}
 		return resp;
                 
 	}
 
-    public ReqI convertResultSetToReqI(ResultSet resultSet) throws SQLException {		
+    public ReqIV convertResultSetToReqIV(ResultSet resultSet) throws SQLException {		
 		
-		String proveedor = resultSet.getString("PROVEEDOR");
-		Double ingresos = resultSet.getDouble("INGRESOS");
+		Long idHabitacion = resultSet.getLong("IDHAB");
+		Long idApartamento = resultSet.getLong("IDAPT");
+		Long idVivienda = resultSet.getLong("IDVIV");
 	
-	
-		ReqI op = new ReqI(proveedor, ingresos);
+		ReqIV op = new ReqIV(idHabitacion, idApartamento, idVivienda);
 		return op;
 	}
 }
