@@ -1,0 +1,151 @@
+{
+	"variables": [],
+	"info": {
+		"name": "sistrans i",
+		"_postman_id": "228c769a-0c1c-828b-1b06-f5996668aafa",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas/10003/deshab",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas/10003/deshab",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas/10003/deshab",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas/10003/deshab",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/ofertas/10003/",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/ofertas/10003/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/reservaColectiva/5/apartamento",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/reservaColectiva/5/apartamento",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/reservaColectiva/reservaPrimera",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/reservaColectiva/reservaPrimera",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/MIO/rest/contratos",
+			"request": {
+				"url": "http://localhost:8080/MIO/rest/contratos",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
