@@ -60,22 +60,19 @@ public class DAOReqI{
         
 	public ArrayList<ReqI> getReqI() throws SQLException 
         {
-		System.out.println("se mete al metodo del dao");
-
                 ArrayList<ReqI> resp = new ArrayList<ReqI>();
                 
 		String sql = String.format("SELECT SUM(CONTRATO.COSTO) AS INGRESO, OPERADOR.IDOPERADOR AS PROVEEDOR FROM CONTRATO INNER JOIN OPERADOR ON CONTRATO.IDOPERADOR = OPERADOR.IDOPERADOR WHERE ((TO_DATE(CONTRATO.FECHAINIC,'YYYY-MM-DD')) - (ADD_MONTHS(TRUNC(SYSDATE),-12)))>=0 AND (SYSDATE-(TO_DATE(CONTRATO.FECHAINIC,'YYYY-MM-DD')))>=0 GROUP BY OPERADOR.IDOPERADOR"
 				, USUARIO);
-		System.out.println(sql);
 
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
 		ResultSet rs = prepStmt.executeQuery();
-                while (rs.next()) {
+		
+        while (rs.next()) {
 			resp.add(convertResultSetToReqI(rs));
 		}
-		return resp;
-                
+		return resp;                
 	}
 
     public ReqI convertResultSetToReqI(ResultSet resultSet) throws SQLException {		
