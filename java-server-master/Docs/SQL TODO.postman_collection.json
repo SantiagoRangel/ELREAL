@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "9d6bfe10-f5bf-43f9-8bfa-9846a89d9c12",
+		"name": "SQL TODO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "REQ I",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoI"
+			},
+			"response": []
+		},
+		{
+			"name": "REQ II",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoII"
+			},
+			"response": []
+		},
+		{
+			"name": "REQ III",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoIII"
+			},
+			"response": []
+		},
+		{
+			"name": "REQ V",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoV"
+			},
+			"response": []
+		},
+		{
+			"name": "REQ IX",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoIX"
+			},
+			"response": []
+		},
+		{
+			"name": "REQ IV",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoIV/10001/2017-01-02/2017-01-01"
+			},
+			"response": []
+		},
+		{
+			"name": "REQ VI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoVI/10001"
+			},
+			"response": []
+		},
+		{
+			"name": "REQ VII",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoVII/7/HABITACION"
+			},
+			"response": []
+		},
+		{
+			"name": "REQ VIII",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "http://localhost:8080/MIO/rest/consultas/requerimientoVIII/10001/HABITACION"
+			},
+			"response": []
+		}
+	]
+}
