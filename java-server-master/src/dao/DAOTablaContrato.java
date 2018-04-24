@@ -110,7 +110,6 @@ public class DAOTablaContrato {
 			prepStmt.executeQuery();
 		}
 		
-System.out.println(sql);
 
 
 	}
@@ -170,6 +169,16 @@ System.out.println(sql);
 	public void deleteContrato(Long id) throws SQLException, Exception {
 
 		String sql = String.format("DELETE FROM %1$s.CONTRATO WHERE IDCONTRATO = %2$d", USUARIO, id);
+		
+		System.out.println(sql);
+		
+		PreparedStatement prepStmt = conn.prepareStatement(sql);
+		recursos.add(prepStmt);
+		prepStmt.executeQuery();
+	}
+	public void deleteContratoDesc(String descripcion) throws SQLException, Exception {
+
+		String sql = String.format("DELETE FROM %1$s.CONTRATO WHERE DESCRIPCION = '%2$s'", USUARIO, descripcion);
 		
 		System.out.println(sql);
 		

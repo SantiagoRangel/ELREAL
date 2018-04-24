@@ -151,11 +151,21 @@ System.out.println(sql);
 
 	public void habilitarOferta(Oferta oferta) throws SQLException
 	{
-        String sqli = (String.format ("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE", USUARIO));
+//        String sqli = (String.format ("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE", USUARIO));
+//		
+//		PreparedStatement prepStmt = conn.prepareStatement(sqli.toString());
+//		recursos.add(prepStmt);
+//		prepStmt.executeQuery();
 		
-		PreparedStatement prepStmt = conn.prepareStatement(sqli.toString());
-		recursos.add(prepStmt);
-		prepStmt.executeQuery();
+		StringBuilder sql1= new StringBuilder();
+		sql1.append (String.format ("SET TRANSACTION ISOLATION LEVEL SERIALIZABLE"));
+		System.out.println(sql1);
+
+		StringBuilder sql2= new StringBuilder();
+		sql2.append (String.format ("SET autocommit 0"));
+		System.out.println(sql2);
+
+		
 		
 		StringBuilder sql = new StringBuilder();
 		sql.append (String.format ("UPDATE %s.OFERTA ", USUARIO));
@@ -164,26 +174,45 @@ System.out.println(sql);
 				1));
 		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta());
 		System.out.println(sql);
-		
-		prepStmt = conn.prepareStatement(sql.toString());
+
+
+		StringBuilder sql3= new StringBuilder();
+		sql3.append (String.format ("commit"));
+		System.out.println(sql3);
+
+		PreparedStatement prepStmt1 = conn.prepareStatement(sql1.toString());
+		recursos.add(prepStmt1);
+		prepStmt1.executeQuery();
+		prepStmt1.close();
+//		PreparedStatement prepStmt2 = conn.prepareStatement(sql2.toString());
+//		recursos.add(prepStmt2);
+//		prepStmt2.executeQuery();
+//		prepStmt2.close();
+		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
 		recursos.add(prepStmt);
 		prepStmt.executeQuery();
-		
-		sqli = String.format("COMMIT"
-				,USUARIO);
-		
-		prepStmt = conn.prepareStatement(sqli);
-		recursos.add(prepStmt);
-		prepStmt.executeQuery();
+		prepStmt.close();
+//
+//		PreparedStatement prepStmt3 = conn.prepareStatement(sql3.toString());
+//		recursos.add(prepStmt3);
+//		prepStmt3.executeQuery();
+//		prepStmt3.close();
+//		
+//		sqli = String.format("COMMIT"
+//				,USUARIO);
+//		
+//		prepStmt = conn.prepareStatement(sqli);
+//		recursos.add(prepStmt);
+//		prepStmt.executeQuery();
 	}
 	
 	public void deshabilitarOferta(Oferta oferta) throws SQLException
 	{		
-		String sqli = (String.format ("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE", USUARIO));
-		
-		PreparedStatement prepStmt = conn.prepareStatement(sqli.toString());
-		recursos.add(prepStmt);
-		prepStmt.executeQuery();
+//		String sqli = (String.format ("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE", USUARIO));
+//		
+//		PreparedStatement prepStmt = conn.prepareStatement(sqli.toString());
+//		recursos.add(prepStmt);
+//		prepStmt.executeQuery();
 		
 		StringBuilder sql = new StringBuilder();
 		sql.append (String.format ("UPDATE %s.OFERTA ", USUARIO));
@@ -193,16 +222,16 @@ System.out.println(sql);
 		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta());
 		System.out.println(sql);
 		
-		prepStmt = conn.prepareStatement(sql.toString());
-		recursos.add(prepStmt);
-		prepStmt.executeQuery();
-		
-		sqli = String.format("COMMIT"
-				,USUARIO);
-		
-		prepStmt = conn.prepareStatement(sqli);
-		recursos.add(prepStmt);
-		prepStmt.executeQuery();
+//		prepStmt = conn.prepareStatement(sql.toString());
+//		recursos.add(prepStmt);
+//		prepStmt.executeQuery();
+//		
+//		sqli = String.format("COMMIT"
+//				,USUARIO);
+//		
+//		prepStmt = conn.prepareStatement(sqli);
+//		recursos.add(prepStmt);
+//		prepStmt.executeQuery();
 		
 	}
 	public void deleteOferta(Long id) throws SQLException, Exception {
