@@ -81,7 +81,7 @@ public class DAOReqI{
     public ReqI convertResultSetToReqI(ResultSet resultSet) throws SQLException {		
 		
 		String proveedor = resultSet.getString("PROVEEDOR");
-		Double ingresos = resultSet.getDouble("INGRESOS");
+		Double ingresos = resultSet.getDouble("INGRESO");
 	
 	
 		ReqI op = new ReqI(proveedor, ingresos);
