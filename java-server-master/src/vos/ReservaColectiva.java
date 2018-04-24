@@ -53,10 +53,7 @@ public class ReservaColectiva {
 		this.contratos = contratos;
 	}
 
-	public ReservaColectiva(@JsonProperty(value="contratos")ArrayList<Long> contratos) {
-		super();
-		this.contratos = contratos;
-	}
+	
 
 	public List<Long> getContratos() {
 		return contratos;
@@ -69,6 +66,10 @@ public class ReservaColectiva {
 	public void addContrato(Long contrato)
 	{
 		contratos.add(contrato);
+	}
+	public void addCliente(Long cliente)
+	{
+		idClientes.add(cliente);
 	}
 
 	public String getDescripcion() {

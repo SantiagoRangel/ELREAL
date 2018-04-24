@@ -1902,28 +1902,24 @@ public class AlohaTM {
 		Long idReservaColectiva = reservaColectiva.getIdReservaColectiva();
 		Long noches = reservaColectiva.getNoches();
 		
-		for (int i = 0; i < j; i++) {
-			Long idHabitacioni =habitaciones.get(i).getIdHabitacion();
-			Long idCliente =  idClientes.get(i);
-			Long idOperador = habitaciones.get(i).getIdOperador();
-			Long variable = Long.parseLong(""+i);
-			
-			Contrato contrato = new Contrato(descripcion, fechaInicial, fechaFinal, idReservaColectiva + variable, noches, costo, null, idHabitacioni, idCliente, idOperador, null);
-			this.registrarContrato(contrato);
-			reservaColectiva.addContrato(contrato.getIdContrato());
-		}
-		
-		return reservaColectiva;
-	}
-	public void transaccion() throws SQLException {
-		DAOReqVII daoOferta = new DAOReqVII();
+	
+		DAOTablaContrato daoHabitaciones = new DAOTablaContrato();
 		try 
 		{
 			//////transaccion
 			
 			this.conn = darConexion();
-			daoOferta.setConn(conn);
-			daoOferta.transaccion();
+			daoHabitaciones.setConn(conn);
+			for (int i = 1; (i < j)&&(i<idClientes.size()); i++) {
+				Long idHabitacioni =habitaciones.get(i-1).getIdHabitacion();
+				Long idCliente =  idClientes.get(i-1);
+				Long idOperador = habitaciones.get(i-1).getIdOperador();
+				Long variable = Long.parseLong(""+i);
+				
+				Contrato contrato = new Contrato(descripcion, fechaInicial, fechaFinal, idReservaColectiva + variable, noches, costo, null, idHabitacioni, idCliente, idOperador, null);
+				daoHabitaciones.registrarContrato(contrato);
+				System.out.println("se registro el contrato"+i);
+			}
 			conn.commit();
 
 		} catch (SQLException e) {
@@ -1936,7 +1932,7 @@ public class AlohaTM {
 			throw e;
 		} finally {
 			try {
-				daoOferta.cerrarRecursos();
+				daoHabitaciones.cerrarRecursos();
 				if(this.conn!=null)
 					this.conn.close();
 			} catch (SQLException exception) {
@@ -1944,7 +1940,152 @@ public class AlohaTM {
 				exception.printStackTrace();
 				throw exception;
 			}
-		}   
-	                
+		}
+		
+		return reservaColectiva;
+	}
+	
+	
+	public ReservaColectiva hacerReservaColectivaApartamento(int var, ReservaColectiva reservaColectiva) throws Exception {
+		// TODO Auto-generated method stub
+		List<Apartamento> habitaciones = this.getAllApartamentos();
+		Long costo = reservaColectiva.getCosto();
+		String descripcion = reservaColectiva.getDescripcion();
+		String fechaFinal = reservaColectiva.getFechaFinal();
+		String fechaInicial =reservaColectiva.getFechaInicial();
+		System.out.println("llegue aca");
+		List<Long> idClientes = reservaColectiva.getIdClientes();
+		System.out.println("meti los clientes");
+		Long idReservaColectiva = reservaColectiva.getIdReservaColectiva();
+		Long noches = reservaColectiva.getNoches();
+		
+	
+		DAOTablaContrato daoHabitaciones = new DAOTablaContrato();
+		try 
+		{
+			//////transaccion
+			
+			this.conn = darConexion();
+			daoHabitaciones.setConn(conn);
+			for (int i = 1; (i < var)&&(i<idClientes.size()); i++) {
+				Long idHabitacioni =habitaciones.get(i-1).getIdApartamento();
+				Long idCliente =  idClientes.get(i-1);
+				Long idOperador = habitaciones.get(i-1).getIdPersonaNatural();
+				Long variable = Long.parseLong(""+i);
+				
+				Contrato contrato = new Contrato(descripcion, fechaInicial, fechaFinal, idReservaColectiva + variable, noches, costo, null, idHabitacioni, idCliente, idOperador, null);
+				daoHabitaciones.registrarContrato(contrato);
+				System.out.println("se registro el contrato"+i);
+			}
+			conn.commit();
+
+		} catch (SQLException e) {
+			System.err.println("SQLException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} catch (Exception e) {
+			System.err.println("GeneralException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} finally {
+			try {
+				daoHabitaciones.cerrarRecursos();
+				if(this.conn!=null)
+					this.conn.close();
+			} catch (SQLException exception) {
+				System.err.println("SQLException closing resources:" + exception.getMessage());
+				exception.printStackTrace();
+				throw exception;
+			}
+		}
+		
+		return reservaColectiva;
+	}
+	public ReservaColectiva hacerReservaColectivaVivienda(int var, ReservaColectiva reservaColectiva) throws Exception {
+
+		List<Vivienda> habitaciones = this.getAllViviendas();
+		Long costo = reservaColectiva.getCosto();
+		String descripcion = reservaColectiva.getDescripcion();
+		String fechaFinal = reservaColectiva.getFechaFinal();
+		String fechaInicial =reservaColectiva.getFechaInicial();
+		System.out.println("llegue aca");
+		List<Long> idClientes = reservaColectiva.getIdClientes();
+		System.out.println("meti los clientes");
+		Long idReservaColectiva = reservaColectiva.getIdReservaColectiva();
+		Long noches = reservaColectiva.getNoches();
+		
+	
+		DAOTablaContrato daoHabitaciones = new DAOTablaContrato();
+		try 
+		{
+			//////transaccion
+			
+			this.conn = darConexion();
+			daoHabitaciones.setConn(conn);
+			for (int i = 1; (i < var)&&(i<idClientes.size()); i++) {
+				Long idHabitacioni =habitaciones.get(i-1).getIdVivienda();
+				Long idCliente =  idClientes.get(i-1);
+				Long idOperador = habitaciones.get(i-1).getIdPersonaNatural();
+				Long variable = Long.parseLong(""+i);
+				
+				Contrato contrato = new Contrato(descripcion, fechaInicial, fechaFinal, idReservaColectiva + variable, noches, costo, null, idHabitacioni, idCliente, idOperador, null);
+				daoHabitaciones.registrarContrato(contrato);
+				System.out.println("se registro el contrato"+i);
+			}
+			conn.commit();
+
+		} catch (SQLException e) {
+			System.err.println("SQLException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} catch (Exception e) {
+			System.err.println("GeneralException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} finally {
+			try {
+				daoHabitaciones.cerrarRecursos();
+				if(this.conn!=null)
+					this.conn.close();
+			} catch (SQLException exception) {
+				System.err.println("SQLException closing resources:" + exception.getMessage());
+				exception.printStackTrace();
+				throw exception;
+			}
+		}
+		
+		return reservaColectiva;
+	}
+	
+	public void borrarContratratosDesc(String descripcion) throws Exception {
+		DAOTablaContrato darPreferencia = new DAOTablaContrato();
+		try 
+		{
+			//////transaccion
+			this.conn = darConexion();
+			darPreferencia.setConn(conn);
+			darPreferencia.deleteContratoDesc(descripcion);;
+			conn.commit();
+
+		} catch (SQLException e) {
+			System.err.println("SQLException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} catch (Exception e) {
+			System.err.println("GeneralException:" + e.getMessage());
+			e.printStackTrace();
+			throw e;
+		} finally {
+			try {
+				darPreferencia.cerrarRecursos();
+				if(this.conn!=null)
+					this.conn.close();
+			} catch (SQLException exception) {
+				System.err.println("SQLException closing resources:" + exception.getMessage());
+				exception.printStackTrace();
+				throw exception;
+			}
+		}
+		
 	}
 }
