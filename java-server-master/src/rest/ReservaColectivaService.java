@@ -130,7 +130,7 @@ public class ReservaColectivaService {
 	    Long siete= Long.parseLong(""+7);
 	    Long num= Long.parseLong(""+25);
 	    Long idReserva =Long.parseLong(""+2000);
-		ReservaColectiva reserva= new ReservaColectiva("reservaPrimera", "2000-1-1", "2000-1-5", idReserva, siete, num, idClientes, contratos);
+		ReservaColectiva reserva= new ReservaColectiva("reservaApartamentoPrueba", "2000-1-1", "2000-1-5", idReserva, siete, num, idClientes, contratos);
 		AlohaTM tm = new AlohaTM(getPath());
 			try {
 				tm.hacerReservaColectivaApartamento(var, reserva);
