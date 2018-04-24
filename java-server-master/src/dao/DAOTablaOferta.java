@@ -68,8 +68,8 @@ public class DAOTablaOferta {
 //			throw new Exception("hay campos en null que no pueden ser null");
 //		}
 //		 
-		String sql = String.format("INSERT INTO %1$s.OFERTA (IDVIVIENDA, IDAPARTAMENTO, IDHABITACION, IDOFERTA, FECHAINICIAL, FECHAFINAL, DISPONIBLE, DESCRIPCION, IDOPERADOR) "
-                        + "VALUES (%2$s, %3$s, %4$s, %5$s, '%6$s', '%7$s', %8$s, '%9$s', %10$s)", 
+		String sql = String.format("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE INSERT INTO %1$s.OFERTA (IDVIVIENDA, IDAPARTAMENTO, IDHABITACION, IDOFERTA, FECHAINICIAL, FECHAFINAL, DISPONIBLE, DESCRIPCION, IDOPERADOR) "
+                        + "VALUES (%2$s, %3$s, %4$s, %5$s, '%6$s', '%7$s', %8$s, '%9$s', %10$s) COMMIT", 
 				USUARIO, 
 				oferta.getIdVivienda(),
 				oferta.getIdApartamento(),
@@ -102,7 +102,7 @@ System.out.println(sql);
 		ArrayList<Oferta> ofertas = new ArrayList<Oferta>();
 
 		//Aclaracion: Por simplicidad, solamente se obtienen los primeros 50 resultados de la consulta
-		String sql = String.format("SELECT * FROM %1$s.OFERTA WHERE ROWNUM <= 50", USUARIO);
+		String sql = String.format("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE SELECT * FROM %1$s.OFERTA WHERE ROWNUM <= 50 COMMIT", USUARIO);
 
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
@@ -119,7 +119,7 @@ System.out.println(sql);
 	{
 		Oferta oferta = null;
 
-		String sql = String.format("SELECT * FROM %1$s.OFERTA WHERE IDOFERTA = %2$d", USUARIO, id); 
+		String sql = String.format("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE SELECT * FROM %1$s.OFERTA WHERE IDOFERTA = %2$d COMMIT", USUARIO, id); 
 
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
@@ -136,11 +136,11 @@ System.out.println(sql);
 	public void updateOferta(Oferta oferta) throws SQLException, Exception {
 
 		StringBuilder sql = new StringBuilder();
-		sql.append(String.format("UPDATE %s.OFERTA SET ", USUARIO));
+		sql.append(String.format("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE UPDATE %s.OFERTA SET ", USUARIO));
 		sql.append(String.format("IDVIVIENDA = %1$s AND IDAPARTAMENTO = %2$s AND IDHABITACION = %3$s"
 				+ " AND IDOFERTA = %4$s AND IDOPERADOR = %5$s AND FECHAINICIAL = '%6$s'AND FECHAFINAL = '%7$s' AND DISPONIBLE = %8$s AND DESCRIPCION = '%9$s' ", oferta.getIdVivienda(),
 		oferta.getIdApartamento(), oferta.getIdHabitacion(),oferta.getIdOferta(),oferta.getFechaFinal(), oferta.getFechaInicial(), oferta.getDisponible(), oferta.getDescripcion() ));
-		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta() );
+		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta() + "COMMIT");
 		System.out.println(sql);
 		
 		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
@@ -152,11 +152,11 @@ System.out.println(sql);
 	public void habilitarOferta(Oferta oferta) throws SQLException
 	{
 		StringBuilder sql = new StringBuilder();
-		sql.append (String.format ("UPDATE %s.OFERTA ", USUARIO));
+		sql.append (String.format ("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE UPDATE %s.OFERTA ", USUARIO));
 		sql.append (String.format (
 				"SET DISPONIBLE = %1$s",
 				1));
-		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta());
+		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta() + "COMMIT");
 		System.out.println(sql);
 		
 		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
@@ -167,11 +167,11 @@ System.out.println(sql);
 	public void deshabilitarOferta(Oferta oferta) throws SQLException
 	{
 		StringBuilder sql = new StringBuilder();
-		sql.append (String.format ("UPDATE %s.OFERTA ", USUARIO));
+		sql.append (String.format ("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE UPDATE %s.OFERTA ", USUARIO));
 		sql.append (String.format (
 				"SET DISPONIBLE = %1$s",
 				0));
-		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta());
+		sql.append ("WHERE IDOFERTA = " + oferta.getIdOferta() + "COMMIT");
 		System.out.println(sql);
 		
 		PreparedStatement prepStmt = conn.prepareStatement(sql.toString());
@@ -180,7 +180,7 @@ System.out.println(sql);
 	}
 	public void deleteOferta(Long id) throws SQLException, Exception {
 
-		String sql = String.format("DELETE FROM %1$s.OFERTA WHERE IDOFERTA = %2$d", USUARIO, id);
+		String sql = String.format("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE DELETE FROM %1$s.OFERTA WHERE IDOFERTA = %2$d COMMIT", USUARIO, id);
 
 		System.out.println(sql);
 		
@@ -210,7 +210,7 @@ System.out.println(sql);
 	public ArrayList<Oferta> getReqII() throws SQLException, Exception {
 		ArrayList<Oferta> ofertas = new ArrayList<Oferta>();
 		
-		String sql = String.format("SELECT *" + 
+		String sql = String.format("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE SELECT *" + 
 				"FROM(SELECT IDA, COUNT(IDA) AS CUENTA" + 
 				"FROM (OPERADOR INNER JOIN" + 
 				"(SELECT NVL (IDHABITACION,0) + NVL (IDAPARTAMENTO, 0) + NVL (IDVIVIENDA,0) AS IDA, IDCONTRATO, COSTO, FECHAFINAL, FECHAINIC, NOCHES, DESCRIPCION, IDOPERADOR, IDCLIENTE" + 
@@ -219,8 +219,7 @@ System.out.println(sql);
 				"FROM OFERTA) ON IDB = OPERADOR.IDOPERADOR AND IDA = IDB " + 
 				"GROUP BY IDA" + 
 				"ORDER BY CUENTA) " + 
-				"WHERE ROWNUM <= 20;");
-				"WHERE ROWNUM <= 20");
+				"WHERE ROWNUM <= 20 COMMIT");
 
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
@@ -235,7 +234,7 @@ System.out.println(sql);
 	public ArrayList<Oferta> getReqIX() throws SQLException, Exception {
 		ArrayList<Oferta> ofertas = new ArrayList<Oferta>();
 		
-		String sql = String.format("SELECT * FROM OFERTA WHERE IDOFERTA NOT IN (SELECT IDOFERTA FROM (SELECT NVL(IDVIVIENDA, 0) AS IDVII, NVL(IDHABITACION, 0) AS IDHII, NVL(IDAPARTAMENTO, 0) AS IDAII, IDOFERTA FROM OFERTA WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= SYSDATE AND TO_DATE(FECHAINICIAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')< ADD_MONTHS(SYSDATE, -1)) INNER JOIN (SELECT NVL(IDVIVIENDA, 0) AS IDVI, NVL(IDHABITACION, 0) AS IDHI, NVL(IDAPARTAMENTO, 0) AS IDAI FROM CONTRATO WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= ADD_MONTHS(SYSDATE, -1)) ON IDVII = IDVI AND IDHII = IDHI AND IDAII = IDAI) AND IDOFERTA IN (SELECT IDOFERTA FROM OFERTA WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= SYSDATE AND TO_DATE(FECHAINICIAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')< ADD_MONTHS(SYSDATE, -1))"
+		String sql = String.format("SET AUTOCOMMIT 0 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE SELECT * FROM OFERTA WHERE IDOFERTA NOT IN (SELECT IDOFERTA FROM (SELECT NVL(IDVIVIENDA, 0) AS IDVII, NVL(IDHABITACION, 0) AS IDHII, NVL(IDAPARTAMENTO, 0) AS IDAII, IDOFERTA FROM OFERTA WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= SYSDATE AND TO_DATE(FECHAINICIAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')< ADD_MONTHS(SYSDATE, -1)) INNER JOIN (SELECT NVL(IDVIVIENDA, 0) AS IDVI, NVL(IDHABITACION, 0) AS IDHI, NVL(IDAPARTAMENTO, 0) AS IDAI FROM CONTRATO WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= ADD_MONTHS(SYSDATE, -1)) ON IDVII = IDVI AND IDHII = IDHI AND IDAII = IDAI) AND IDOFERTA IN (SELECT IDOFERTA FROM OFERTA WHERE TO_DATE(FECHAFINAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')>= SYSDATE AND TO_DATE(FECHAINICIAL, 'YYYY-MM-DD\"T\"HH24:MI:SS\"Z\"')< ADD_MONTHS(SYSDATE, -1)) COMMIT"
 				,USUARIO);
 
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
