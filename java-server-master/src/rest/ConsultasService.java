@@ -107,14 +107,14 @@ public class ConsultasService {
 		}
 	}
 	@GET
-	@Path( "requerimientoIV" )
+	@Path( "requerimientoVI/" + "{id: \\d+}")
 	@Produces( { MediaType.APPLICATION_JSON } )
-	public Response getRequerimientoVI()
+	public Response getRequerimientoVI(@PathParam( "id" ) Long id)
 	{
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
-			List<ReqVI> apto = tm.getRequerimientoVI();
+			List<ReqVI> apto = tm.getRequerimientoVI(id);
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )
@@ -123,14 +123,14 @@ public class ConsultasService {
 		}
 	}
 	@GET
-	@Path( "requerimientoIV" )
+	@Path( "requerimientoIV/"+"{id: \\d+}"+"/"+"{ff}"+"/"+"{fi}")
 	@Produces( { MediaType.APPLICATION_JSON } )
-	public Response getRequerimientoIV()
+	public Response getRequerimientoIV( @PathParam( "id" ) Long id, @PathParam( "fi" ) String fi,  @PathParam( "ff" ) String ff)
 	{
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
-			List<ReqIV> apto = tm.getRequerimientoIV();
+			List<ReqIV> apto = tm.getRequerimientoIV(id, ff, fi);
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )
@@ -156,16 +156,15 @@ public class ConsultasService {
 	}
 	
 	@GET
-	@Path( "requerimientoVII/"+"{id: \\d+}")
+	@Path( "requerimientoVII/"+"{id: \\d+}"+"/"+"{lol}")
 	@Produces( { MediaType.APPLICATION_JSON } )
-	public Response getRequerimientoVII( @PathParam( "id" ) Long id)
+	public Response getRequerimientoVII( @PathParam( "id" ) Long id, @PathParam( "lol" ) String tipo)
 	{
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
-			//List<ReqVII> apto = tm.getRequerimientoVII(id, "hola");
-			tm.transaccion();
-			return Response.status( 200 ).entity( id ).build( );			
+		    List<ReqVII> apto = tm.getRequerimientoVII(id,tipo);
+			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )
 		{
@@ -174,14 +173,14 @@ public class ConsultasService {
 	}
 	
 	@GET
-	@Path( "requerimientoVIII" )
+	@Path( "requerimientoVIII/" +"{id: \\d+}"+"/"+"{lol}")
 	@Produces( { MediaType.APPLICATION_JSON } )
-	public Response getRequerimientoVIII()
+	public Response getRequerimientoVIII(@PathParam( "id" ) Long id,@PathParam( "lol" ) String tipo)
 	{
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
-			List<Cliente> apto = tm.getRequerimientoVIII();
+			List<Cliente> apto = tm.getRequerimientoVIII(id, tipo);
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )
