@@ -140,6 +140,22 @@ public class ConsultasService {
 		}
 	}
 	@GET
+	@Path( "requerimientoVI/" + "{id: \\d+}"+"{group}")
+	@Produces( { MediaType.APPLICATION_JSON } )
+	public Response getRequerimientoXI(@PathParam( "id" ) Long id, @PathParam( "group" ) String group)
+	{
+		try{
+			AlohaTM tm = new AlohaTM( getPath( ) );
+			
+			List<ReqX> apto = tm.getRequerimientoXI(id, group);
+			return Response.status( 200 ).entity( apto ).build( );			
+		}
+		catch( Exception e )
+		{
+			return Response.status( 500 ).entity( doErrorMessage( e ) ).build( );
+		}
+	}
+	@GET
 	@Path( "requerimientoIV/"+"{id: \\d+}"+"/"+"{ff}"+"/"+"{fi}")
 	@Produces( { MediaType.APPLICATION_JSON } )
 	public Response getRequerimientoIV( @PathParam( "id" ) Long id, @PathParam( "fi" ) String fi,  @PathParam( "ff" ) String ff)
