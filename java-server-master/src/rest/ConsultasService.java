@@ -20,6 +20,7 @@ import vos.ReqIV;
 import vos.ReqV;
 import vos.ReqVI;
 import vos.ReqVII;
+import vos.ReqX;
 
 @Path("consultas")
 public class ConsultasService {
@@ -115,6 +116,22 @@ public class ConsultasService {
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
 			List<ReqVI> apto = tm.getRequerimientoVI(id);
+			return Response.status( 200 ).entity( apto ).build( );			
+		}
+		catch( Exception e )
+		{
+			return Response.status( 500 ).entity( doErrorMessage( e ) ).build( );
+		}
+	}
+	@GET
+	@Path( "requerimientoVI/" + "{id: \\d+}"+"{group}")
+	@Produces( { MediaType.APPLICATION_JSON } )
+	public Response getRequerimientoX(@PathParam( "id" ) Long id, @PathParam( "group" ) String group)
+	{
+		try{
+			AlohaTM tm = new AlohaTM( getPath( ) );
+			
+			List<ReqX> apto = tm.getRequerimientoX(id, group);
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )
