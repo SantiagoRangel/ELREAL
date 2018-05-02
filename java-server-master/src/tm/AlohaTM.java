@@ -17,6 +17,7 @@ import dao.DAOReqV;
 import dao.DAOReqVI;
 import dao.DAOReqVII;
 import dao.DAOReqX;
+import dao.DAOReqXII;
 import dao.DAOReqXIII;
 import dao.DAOReqIV;
 import dao.DAOTablaApartamento;
@@ -45,6 +46,7 @@ import vos.ReqV;
 import vos.ReqVI;
 import vos.ReqVII;
 import vos.ReqX;
+import vos.ReqXII;
 import vos.ReqXIII;
 import vos.ReqIV;
 import vos.ReservaColectiva;
@@ -1884,6 +1886,41 @@ public class AlohaTM {
 				dao.setConn(conn);				
 				
 				req = dao.getReqXIII();
+			}
+			catch (SQLException sqlException) {
+				System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());
+				sqlException.printStackTrace();
+				throw sqlException;
+			} 
+			catch (Exception exception) {
+				System.err.println("[EXCEPTION] General Exception:" + exception.getMessage());
+				exception.printStackTrace();
+				throw exception;
+			} 
+			finally {
+				try {
+					dao.cerrarRecursos();
+					if(this.conn!=null){
+						this.conn.close();					
+					}
+				}
+				catch (SQLException exception) {
+					System.err.println("[EXCEPTION] SQLException While Closing Resources:" + exception.getMessage());
+					exception.printStackTrace();
+					throw exception;
+				}
+			}
+			return req;
+		}	 
+	 public List<ReqXII> getRequerimientoXII() throws Exception {
+			DAOReqXII dao = new DAOReqXII();
+			List<ReqXII> req;
+			try 
+			{
+				this.conn = darConexion();
+				dao.setConn(conn);				
+				
+				req = dao.getReqXII();
 			}
 			catch (SQLException sqlException) {
 				System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());
