@@ -60,12 +60,22 @@ public class DAOReqIV{
 		this.conn = con;
 	}
         
-	public ArrayList<ReqIV> getReqIV(String fechaFinal, String fechaInicial, Long servicio) throws SQLException 
+	public ArrayList<ReqIV> getReqIV(String fechaFinal, String fechaInicial, Long [] servicios) throws SQLException 
         {
                 ArrayList<ReqIV> resp = new ArrayList<ReqIV>();
+                String concat = "";
                 
-		String sql = String.format("SELECT HAB, APT, VIV FROM (SELECT HAB, APT, VIV, ((TO_DATE('%2$s',  'YYYY-MM-DD HH24:MI:SS'))-(TO_DATE(FF,  'YYYY-MM-DD HH24:MI:SS')))AS FFF, ((TO_DATE(FI,  'YYYY-MM-DD HH24:MI:SS'))-(TO_DATE('%3$s',  'YYYY-MM-DD HH24:MI:SS'))) AS FIF FROM (SELECT HAB, APT, VIV, FF, FI FROM (SELECT IDHAB FROM (SELECT IDSH, IDHAB FROM (SELECT IDSH, IDHAB FROM (SELECT IDSERVICIOHABITACION AS IDSH, IDHABITACION AS IDHAB FROM HABITACIONOFRECE) INNER JOIN (SELECT IDHABITACION AS IDSHI FROM HABITACION) ON IDSHI = IDHAB) INNER JOIN (SELECT IDSERVICIOHABITACION AS LOL FROM SERVICIOHABITACION) ON LOL = IDSH) WHERE IDSH = %4$d) INNER JOIN (SELECT FF, FI, HAB, APT, VIV FROM (SELECT FECHAFINAL AS FF, FECHAINICIAL AS FI, IDHABITACION AS HAB, IDAPARTAMENTO AS APT, IDVIVIENDA AS VIV, DISPONIBLE FROM OFERTA WHERE DISPONIBLE = 1)) ON HAB = IDHAB)) WHERE FFF <= 0 AND FIF <= 0"
-				, USUARIO, fechaFinal, fechaInicial, servicio);
+                if (!(servicios.length==0))
+                {
+                	concat = "WHERE IDSH =" + servicios[0];
+                	for (int i = 1; i< servicios.length; i++)
+                	{
+                		concat = concat + "OR IDSH =" + servicios[i];
+                	}
+                }
+                
+		String sql = String.format("SELECT HABITACIONES, APARTAMENTOS, VIVIENDAS FROM (SELECT IDH AS HABITACIONES, IDA AS APARTAMENTOS, IDV AS VIVIENDAS, IDSERVICIOHABITACION AS  IDSH FROM (SELECT * FROM (SELECT IDHABITACION AS IDH, IDAPARTAMENTO AS IDA, IDAPARTAMENTO AS IDV, IDOFERTA FROM OFERTA WHERE (TO_DATE(FECHAINICIAL,  'YYYY-MM-DD'))-(TO_DATE('%2$s',  'YYYY-MM-DD'))>=0 AND (TO_DATE(FECHAFINAL,  'YYYY-MM-DD'))-(TO_DATE('%3$s',  'YYYY-MM-DD'))<=0 AND NOT (IDHABITACION IS NULL AND IDAPARTAMENTO IS NULL)) INNER JOIN HABITACIONOFRECE ON (IDH = IDHABITACION OR IDA = IDHABITACION OR IDV = IDHABITACION))) %4$s"
+				, USUARIO, fechaFinal, fechaInicial, concat);
 
 		PreparedStatement prepStmt = conn.prepareStatement(sql);
 		recursos.add(prepStmt);
@@ -79,11 +89,11 @@ public class DAOReqIV{
 
     public ReqIV convertResultSetToReqIV(ResultSet resultSet) throws SQLException {		
 		
-		Long idHabitacion = resultSet.getLong("IDHAB");
-		Long idApartamento = resultSet.getLong("IDAPT");
-		Long idVivienda = resultSet.getLong("IDVIV");
+		Long habitaciones = resultSet.getLong("HABITACIONES");
+		Long apartamentos = resultSet.getLong("APARTAMENTOS");
+		Long viviendas = resultSet.getLong("VIVIENDAS");
 	
-		ReqIV op = new ReqIV(idHabitacion, idApartamento, idVivienda);
+		ReqIV op = new ReqIV(habitaciones, apartamentos, viviendas);
 		return op;
 	}
 }

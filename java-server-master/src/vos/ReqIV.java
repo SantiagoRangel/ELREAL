@@ -6,48 +6,47 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 public class ReqIV {    
     
-	@JsonProperty(value="idHab")
-	private Long idHab;
+	@JsonProperty(value="habitaciones")
+	private Long habitaciones;
 	
-	@JsonProperty(value="idApt")
-	private Long idApt;
+	@JsonProperty(value="apartamentos")
+	private Long apartamentos;
 	
-	@JsonProperty(value="idViv")
-	private Long idViv;
+	@JsonProperty(value="viviendas")
+	private Long viviendas;
 	
-	public ReqIV(@JsonProperty(value="idHab") Long idHab,
-                  @JsonProperty(value="idApt") Long idApt,
-                  @JsonProperty(value="idViv") Long idViv)
+	public ReqIV(@JsonProperty(value="habitaciones") Long habitaciones,
+                  @JsonProperty(value="apartamentos") Long apartamentos,
+                  @JsonProperty(value="viviendas") Long viviendas)
         {
 		super();
-		this.idHab = idHab;
-		this.idApt = idApt;
-		this.idViv = idViv;
+		this.habitaciones = habitaciones;
+		this.apartamentos = apartamentos;
+		this.viviendas = viviendas;
 	}
 
-	public Long getIdHab() {
-		return idHab;
+	public Long getHabitaciones() {
+		return habitaciones;
 	}
 
-	public void setIdHab(Long idHab) {
-		this.idHab = idHab;
+	public void setHabitaciones(Long habitaciones) {
+		this.habitaciones = habitaciones;
 	}
 
-	public Long getIdApt() {
-		return idApt;
+	public Long getApartamentos() {
+		return apartamentos;
 	}
 
-	public void setIdApt(Long idApt) {
-		this.idApt = idApt;
+	public void setApartamentos(Long apartamentos) {
+		this.apartamentos = apartamentos;
 	}
 
-	public Long getIdViv() {
-		return idViv;
+	public Long getViviendas() {
+		return viviendas;
 	}
 
-	public void setIdViv(Long idViv) {
-		this.idViv = idViv;
+	public void setViviendas(Long viviendas) {
+		this.viviendas = viviendas;
 	}
-	
 }
 
