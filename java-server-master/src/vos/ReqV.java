@@ -15,19 +15,29 @@ public class ReqV {
 	private Integer persona;
         @JsonProperty(value="vivienda")
 	private Integer vivienda;
+        @JsonProperty(value="cliente")
+    	private Integer cliente;
 	
 	public ReqV(@JsonProperty(value="persona")Integer persona,
                 @JsonProperty(value="vivienda")Integer vivienda,
                 @JsonProperty(value="hotel")Integer hotel,
-                @JsonProperty(value="hostal") Integer hostal)
+                @JsonProperty(value="hostal") Integer hostal,
+                @JsonProperty(value="cliente") Integer cliente)
         {
 		super();
 		this.hotel = hotel;
 		this.hostal = hostal;
                 this.vivienda = vivienda;
                 this.persona = persona;
+                this.cliente = cliente;
 	}
-         /**
+         public Integer getCliente() {
+		return cliente;
+	}
+	public void setCliente(Integer cliente) {
+		this.cliente = cliente;
+	}
+		/**
      * @return the hotel
      */
     public Integer getHotel() {
