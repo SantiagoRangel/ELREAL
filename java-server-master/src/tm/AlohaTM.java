@@ -1984,7 +1984,7 @@ public class AlohaTM {
 			return req;
 		}
 	 
-	 public List<ReqX> getRequerimientoX(Long id, String group, String[] order) throws Exception {
+	 public List<ReqX> getRequerimientoX(Long idOperador, Long idOferta, String fechaInicio, String fechaFinal , String[] order) throws Exception {
 			DAOReqX dao = new DAOReqX();
 			List<ReqX> req;
 			try 
@@ -1993,7 +1993,7 @@ public class AlohaTM {
 				dao.setConn(conn);
 				
 				
-				req = dao.getReqX(id,group,order);
+				req = dao.getReqX(idOperador, idOferta, fechaInicio, fechaFinal,order);
 			}
 			catch (SQLException sqlException) {
 				System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());
@@ -2020,7 +2020,7 @@ public class AlohaTM {
 			}
 			return req;
 		}
-	 public List<ReqX> getRequerimientoXI(Long id, String group, String[] order) throws Exception {
+	 public List<ReqX> getRequerimientoXI(Long idOperador, Long idOferta, String fechaInicio, String fechaFinal , String[] order) throws Exception {
 			DAOReqX dao = new DAOReqX();
 			List<ReqX> req;
 			try 
@@ -2029,7 +2029,7 @@ public class AlohaTM {
 				dao.setConn(conn);
 				
 				
-				req = dao.getReqXI(id,group,order);
+				req = dao.getReqXI(idOperador, idOferta, fechaInicio, fechaFinal, order);
 			}
 			catch (SQLException sqlException) {
 				System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());

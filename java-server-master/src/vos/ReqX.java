@@ -25,17 +25,13 @@ public class ReqX {
 	@JsonProperty(value="nombre")
 	private String nombre;
 	
-	@JsonProperty(value="cuenta")
-	private Integer cuenta;
-	
 	public ReqX(@JsonProperty(value="monto") Double monto,
                 @JsonProperty(value="nights") Integer nights,
                 @JsonProperty(value="habitaciones") Integer habitaciones,
                 @JsonProperty(value="apartamentos") Integer apartamentos,
                 @JsonProperty(value="viviendas") Integer viviendas,
                 @JsonProperty(value="usuario") String usuario,
-                @JsonProperty(value="nombre") String nombre,
-                @JsonProperty(value="cuenta") Integer cuenta)
+                @JsonProperty(value="nombre") String nombre)
         {
 		this.monto = monto;
 		this.nights = nights;
@@ -44,15 +40,6 @@ public class ReqX {
 		this.viviendas = viviendas;
 		this.usuario = usuario;
 		this.nombre = nombre;
-		this.cuenta = cuenta;
-	}
-
-	public Integer getCuenta() {
-		return cuenta;
-	}
-
-	public void setCuenta(Integer cuenta) {
-		this.cuenta = cuenta;
 	}
 
 	public Double getMonto() {
