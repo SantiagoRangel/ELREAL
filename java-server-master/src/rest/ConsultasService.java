@@ -165,7 +165,7 @@ public class ConsultasService {
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
-			List<ReqX> apto = tm.getRequerimientoX(id, group);
+			List<ReqX> apto = tm.getRequerimientoX(id,id,group, group, null);
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )
@@ -181,7 +181,7 @@ public class ConsultasService {
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
-			List<ReqX> apto = tm.getRequerimientoXI(id, group);
+			List<ReqX> apto = tm.getRequerimientoXI(id,id,group, group, null);
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )
@@ -197,7 +197,7 @@ public class ConsultasService {
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
-			List<ReqIV> apto = tm.getRequerimientoIV(id, ff, fi);
+			List<ReqIV> apto = tm.getRequerimientoIV(null, ff, fi);
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )

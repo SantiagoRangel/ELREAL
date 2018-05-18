@@ -1947,7 +1947,7 @@ public class AlohaTM {
 			}
 			return req;
 		}
-	 public List<ReqIV> getRequerimientoIV(Long id, String fi, String ff) throws Exception {
+	 public List<ReqIV> getRequerimientoIV(Long [] id, String fi, String ff) throws Exception {
 			DAOReqIV dao = new DAOReqIV();
 			List<ReqIV> req;
 			try 

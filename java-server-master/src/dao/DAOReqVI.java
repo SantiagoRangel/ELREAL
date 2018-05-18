@@ -78,9 +78,9 @@ public class DAOReqVI{
 
     public ReqVI convertResultSetToReqVI(ResultSet resultSet) throws SQLException {		
 		
-		Integer habita = resultSet.getInt("HABITA");
-                Integer apto = resultSet.getInt("APTO");
-                Integer vivien = resultSet.getInt("VIVIEN");                
+    	Integer apto = resultSet.getInt("APTO");
+    	Integer vivien = resultSet.getInt("VIVIEN");
+    	Integer habita = resultSet.getInt("HABITA");                       
 		Double total = resultSet.getDouble("TOTAL");
 		Integer noches = resultSet.getInt("NOCHES");
 	
