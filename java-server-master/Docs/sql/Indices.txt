@@ -1,0 +1,10 @@
+Vivienda: ID
+Usuario: ID
+Servicio Habitacion: ID
+Operador: ID
+Oferta: ID, IdHabitacion, IdApartamento, IdVivienda, FechaInicial, FechaFinal, IdOperador
+Habitacion Ofrece: IdHabitacion, IdServicioHabitacion
+Habitacion: ID
+Contrato: ID, Costo,FechaFinal,FechaInic,Noches,IdOperador,IdCliente,IdHabitacion,IdVivienda,IdApartamento
+Cliente: ID
+Apartamento: ID
