@@ -22,3 +22,5 @@ Req X:
 
 Req XI: 
 LO MISMO QUE EL X 
+
+Los arrays siempre van al final de las sentencias. ya hize un for que deberia en teoria funcionar. 
