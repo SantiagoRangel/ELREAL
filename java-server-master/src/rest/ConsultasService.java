@@ -142,7 +142,7 @@ public class ConsultasService {
 		}
 	}
 	@GET
-	@Path( "requerimientoVI/" + "{id: \\d+}")
+	@Path( "requerimientoVI/" + "{id}")
 	@Produces( { MediaType.APPLICATION_JSON } )
 	public Response getRequerimientoVI(@PathParam( "id" ) Long id)
 	{
@@ -158,7 +158,7 @@ public class ConsultasService {
 		}
 	}
 	@GET
-	@Path( "requerimientoVI/" + "{id: \\d+}"+"{group}")
+	@Path( "requerimientoX/" + "{id: \\d+}"+"{group}")
 	@Produces( { MediaType.APPLICATION_JSON } )
 	public Response getRequerimientoX(@PathParam( "id" ) Long id, @PathParam( "group" ) String group)
 	{
@@ -174,14 +174,14 @@ public class ConsultasService {
 		}
 	}
 	@GET
-	@Path( "requerimientoVI/" + "{id: \\d+}"+"{group}")
+	@Path( "requerimientoVI/" + "{id}")
 	@Produces( { MediaType.APPLICATION_JSON } )
-	public Response getRequerimientoXI(@PathParam( "id" ) Long id, @PathParam( "group" ) String group)
+	public Response getRequerimientoXI(@PathParam( "id" ) Long id)
 	{
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
 			
-			List<ReqX> apto = tm.getRequerimientoXI(id,id,group, group, null);
+			List<ReqVI> apto = tm.getRequerimientoVI(id);
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )
@@ -190,14 +190,18 @@ public class ConsultasService {
 		}
 	}
 	@GET
-	@Path( "requerimientoIV/"+"{id: \\d+}"+"/"+"{ff}"+"/"+"{fi}")
+	@Path( "requerimientoIV/"+"{servicios}"+"/"+"{ff}"+"/"+"{fi}")
 	@Produces( { MediaType.APPLICATION_JSON } )
-	public Response getRequerimientoIV( @PathParam( "id" ) Long id, @PathParam( "fi" ) String fi,  @PathParam( "ff" ) String ff)
+	public Response getRequerimientoIV( @PathParam( "servicios" ) String servicios, @PathParam( "fi" ) String fi,  @PathParam( "ff" ) String ff)
 	{
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
-			
-			List<ReqIV> apto = tm.getRequerimientoIV(null, ff, fi);
+			String[] servicios2 = servicios.split(",");
+			Long[] serviciosLong = new Long[servicios2.length];
+			for (int i = 0; i < servicios2.length; i++) {
+				serviciosLong[i] = Long.parseLong(servicios2[i]);
+			}
+			List<ReqIV> apto = tm.getRequerimientoIV(serviciosLong, ff, fi);
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )
