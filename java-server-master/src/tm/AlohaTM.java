@@ -1536,7 +1536,7 @@ public class AlohaTM {
 			dao.setConn(conn);
 			
 			
-			req = dao.getReqVII( num, "hola");
+			req = dao.getReqVII( num, tipo);
 		}
 		catch (SQLException sqlException) {
 			System.err.println("[EXCEPTION] SQLException:" + sqlException.getMessage());
@@ -1949,7 +1949,7 @@ public class AlohaTM {
 			}
 			return req;
 		}
-	 public List<ReqIV> getRequerimientoIV(Long id, String fi, String ff) throws Exception {
+	 public List<ReqIV> getRequerimientoIV(Long [] id, String fi, String ff) throws Exception {
 			DAOReqIV dao = new DAOReqIV();
 			List<ReqIV> req;
 			try 

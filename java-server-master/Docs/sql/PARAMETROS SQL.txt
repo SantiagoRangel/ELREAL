@@ -1,0 +1,26 @@
+Reqs I, II, III, V, IX, XII, XIII NO TIENEN PARAMETROS
+
+Req IV: 
+- un array de longs que son las ID de los servicios ofrecidos 
+- dos strings para fecha inicial y fecha final del rango que se va a analizar
+
+Req VI: 
+- un long con el ID del usuario que se va a analizar
+
+Req VII: 
+- un long con el numero de dias que tendran los segmentos en los cuales se dividira la historia de alohandes
+- un string con el tipo de alojamiento que se desea analizar
+
+Req VIII: 
+- un long con el ID del alojamiento
+- un string con el tipo de alojamiento que se desea analizar
+
+Req X:
+- dos longs, uno con el ID de la oferta y otro con el ID del operador
+- dos strings para fecha inicial y fecha final del rango que se va a analizar
+- un array de strings con las preferencias de ordenamiento
+
+Req XI: 
+LO MISMO QUE EL X 
+
+Los arrays siempre van al final de las sentencias. ya hize un for que deberia en teoria funcionar. 
