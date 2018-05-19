@@ -95,9 +95,11 @@ public class AlohaTM {
 	}
 	private Connection darConexion() throws SQLException {
 		System.out.println(" Attempting Connection to: " + url + " - By User: " + user);
-		return DriverManager.getConnection(url, user, password);
+		Connection coni = DriverManager.getConnection(url, user, password);
+		coni.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
+		coni.setAutoCommit(false);
+		return coni;
 	}
-
 	
 	private void initConnectionData() {
 		try {
