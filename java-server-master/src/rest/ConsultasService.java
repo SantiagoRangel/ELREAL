@@ -158,14 +158,16 @@ public class ConsultasService {
 		}
 	}
 	@GET
-	@Path( "requerimientoX/" + "{id: \\d+}"+"{group}")
+	@Path( "requerimientoX/" + "{id1}"+"/"+"{id2}"+"/"+"{fechaInic}"+"/"+"{fechaFinal}"+"/"+"{group}")
 	@Produces( { MediaType.APPLICATION_JSON } )
-	public Response getRequerimientoX(@PathParam( "id" ) Long id, @PathParam( "group" ) String group)
+	public Response getRequerimientoX(@PathParam( "id1" ) Long id1, @PathParam( "id2" ) Long id2,
+			@PathParam( "fechaInic" ) String inic, @PathParam( "fechaFinal" ) String fechafinal, @PathParam( "group" ) String group)
 	{
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
+			String[] params = group.split(",");
 			
-			List<ReqX> apto = tm.getRequerimientoX(id,id,group, group, null);
+			List<ReqX> apto = tm.getRequerimientoX(id1,id2,inic, fechafinal, params);
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )
@@ -174,14 +176,15 @@ public class ConsultasService {
 		}
 	}
 	@GET
-	@Path( "requerimientoVI/" + "{id}")
+	@Path( "requerimientoVI/"+ "{id1}"+"/"+"{id2}"+"/"+"{fechaInic}"+"/"+"{fechaFinal}"+"/"+"{group}")
 	@Produces( { MediaType.APPLICATION_JSON } )
-	public Response getRequerimientoXI(@PathParam( "id" ) Long id)
+	public Response getRequerimientoXI(@PathParam( "id1" ) Long id1, @PathParam( "id2" ) Long id2,
+			@PathParam( "fechaInic" ) String inic, @PathParam( "fechaFinal" ) String fechafinal, @PathParam( "group" ) String group)
 	{
 		try{
 			AlohaTM tm = new AlohaTM( getPath( ) );
-			
-			List<ReqVI> apto = tm.getRequerimientoVI(id);
+			String[] params = group.split(",");
+			List<ReqX> apto = tm.getRequerimientoXI(id1,id2,inic, fechafinal, params);
 			return Response.status( 200 ).entity( apto ).build( );			
 		}
 		catch( Exception e )
@@ -227,7 +230,7 @@ public class ConsultasService {
 	}
 	
 	@GET
-	@Path( "requerimientoVII/"+"{id: \\d+}"+"/"+"{lol}")
+	@Path( "requerimientoVII/"+"{id}"+"/"+"{lol}")
 	@Produces( { MediaType.APPLICATION_JSON } )
 	public Response getRequerimientoVII( @PathParam( "id" ) Long id, @PathParam( "lol" ) String tipo)
 	{
